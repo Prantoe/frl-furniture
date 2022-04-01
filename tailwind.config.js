@@ -9,8 +9,11 @@ module.exports = {
         brown100: '#B08362',
         grey: '#515151',
         backgroundHeader: '#E7CFB9',
-        subtitle: '#A08D81'
+        subtitle: '#A08D81',
+        choco: '#49392F',
+        greyold: '#8B8B8B',
       },
+      
     },
   },
   plugins: [],

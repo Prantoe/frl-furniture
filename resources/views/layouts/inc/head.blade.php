@@ -6,14 +6,13 @@
       <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,400,500,600,700|Source+Code+Pro&display=swap" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="{{ asset('assets/image-uploader.min.css') }}">
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+<!-- Swiper's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 
 
       <title>RFL Furniture Jogja</title>
-
-      <style>
-
-
-      </style>
 
 </head>
