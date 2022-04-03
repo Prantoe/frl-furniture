@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Product;
+use App\Models\ProductImages;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,10 +16,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //   $products = Product::with('product_images')->latest()->paginate(5);
-
-
-          return view('Home.index')
+          $products = Product::with('product_images')->latest()->paginate(3);
+// $products = Product::with('product_images')->get();
+// @dd($products);
+          return view('Home.index',compact('products'))
           ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

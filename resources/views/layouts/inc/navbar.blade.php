@@ -39,7 +39,8 @@
                              
 
                               <div class="ml-2 capitalize flex ">
-                                    <h1 class="text-sm text-gray-800 font-semibold m-0 p-0 leading-none">Admin</h1>
+                                    <h1 class="text-sm text-gray-800 font-semibold m-0 p-0 leading-none">Administrator</h1>
+
                                     <i class="fad fa-chevron-down ml-2 text-xs leading-none"></i>
                               </div>
                         </button>
@@ -51,7 +52,8 @@
                               <hr>
 
                               <!-- item -->
-                              <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
+                              <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="{{ route('signout') }}">
+
                                     <i class="fad fa-user-times text-xs mr-1"></i>
                                     log out
                               </a>

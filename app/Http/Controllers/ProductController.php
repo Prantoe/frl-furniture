@@ -15,17 +15,11 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    // {
-    //     $products = Product::latest()->paginate(5);
-
-    //     return view('products.index', compact('products'))
-    //         ->with('i', (request()->input('page', 1) - 1) * 5);
-    // }
      {
-        $products = Product::with('product_images')->latest()->paginate(5);
+        $products = Product::with('product_images')->latest()->paginate(10);
 
-    
-        return view('Products.index',compact('products'))
+ $userName = auth()->user()->name;
+        return view('Products.index',compact('products','userName'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

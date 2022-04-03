@@ -13,9 +13,9 @@ class ServiceController extends Controller
     public function index()
   {
     $services = Service::with('service_images')->latest()->paginate(5);
+ $userName = auth()->user()->name;
 
-
-    return view('Services.index',compact('services'))
+    return view('Services.index',compact('services','userName'))
     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

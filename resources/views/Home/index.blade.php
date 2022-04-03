@@ -299,43 +299,22 @@
             <div
                 class=" mx-0 p-10 grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
 
+ @foreach($products as $key => $value)
 
                 <!--Card 1-->
                 <div class="swiper-slide  overflow-hidden  h-72 object-cover">
                     <div class="bg-white rounded-lg  border-2 p-8 md:mx-4">
 
                         <img class="mx-auto h-32"
-                            src="{{ asset("assets/img/product/[removal 1.png") }}" alt="">
+                            src="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}" alt="">
+
                     </div>
-                    <p class="mt-1 text-greyold">Lemari</p>
+                    <p class="mt-1 text-greyold">{{ $value->name }}</p>
 
-                    <h4 class="text-xl text-choco font-bold">Lemari Ruang Tamu</h4>
-                    <p class="mt-1 text-greyold">Rp.230.000,-</p>
+                    <h4 class="text-xl text-choco font-bold">{{ $value->description }}</h4>
+                    <p class="mt-1 text-greyold">Rp.{{ $value->price }},-</p>
                 </div>
-                {{-- card 2 --}}
-                <div class="swiper-slide  overflow-hidden  h-72 object-cover">
-                    <div class="bg-white rounded-lg  border-2 p-8 md:mx-4">
-
-                        <img class="mx-auto h-32"
-                            src="{{ asset("assets/img/product/[removal 2.png") }}" alt="">
-                    </div>
-                    <p class="mt-1 text-greyold">Lemari</p>
-
-                    <h4 class="text-xl text-choco font-bold">Lemari Ruang Tamu</h4>
-                    <p class="mt-1 text-greyold">Rp.230.000,-</p>
-                </div>
-                {{-- card 3 --}}
-                <div class="swiper-slide  overflow-hidden  h-72 object-cover">
-                    <div class="bg-white rounded-lg  border-2 p-8 md:mx-4">
-
-                        <img class="mx-auto h-32"
-                            src="{{ asset("assets/img/product/[removal 3.png") }}" alt="">
-                    </div>
-                    <p class="mt-1 text-greyold">Lemari</p>
-
-                    <h4 class="text-xl text-choco font-bold">Lemari Ruang Tamu</h4>
-                    <p class="mt-1 text-greyold">Rp.230.000,-</p>
-                </div>
+                @endforeach
 
 
             </div>

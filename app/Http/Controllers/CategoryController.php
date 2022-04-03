@@ -12,8 +12,8 @@ class CategoryController extends Controller
      public function index()
      {
      $categorys = Category::latest()->get();
-    
-      return view('Categorys.index',compact('categorys'))
+     $userName = auth()->user()->name;
+      return view('Categorys.index',compact('categorys','userName'))
       ->with('i', (request()->input('page', 1) - 1) * 5);
      }
 
