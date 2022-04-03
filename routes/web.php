@@ -7,7 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
-    return view('home');
+    return view('Home');
 });
 
 Route::resource('products', ProductController::class);

@@ -13,7 +13,7 @@ module.exports = {
         choco: '#49392F',
         greyold: '#8B8B8B',
       },
-      
+     
     },
   },
   plugins: [],

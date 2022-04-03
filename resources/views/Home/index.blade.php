@@ -8,7 +8,7 @@
 
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Landmark</title>
+        <title>FRL Furniture Jogja</title>
 
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -42,7 +42,7 @@
 
     <body class="overflow-x-hidden antialiased ">
 
-        <div class="aa bg-backgroundHeader h-72">
+        <div class=" bg-backgroundHeader lg:h-1/4">
 
 
 
@@ -63,10 +63,10 @@
                             class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Beranda</a>
                         <a href="#features"
                             class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang</a>
-                        <a href="#pricing"
-                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Pricing</a>
+                        <a href="#Product"
+                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Produk</a>
                         <a href="#testimonials"
-                            class="font-bold duration-100 transition-color hover:text-brown">Produk</a>
+                            class="font-bold duration-100 transition-color hover:text-brown">Makeover</a>
                         <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
                             {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
                             <a href="#_"
@@ -76,18 +76,12 @@
                         </div>
                     </nav>
 
+{{-- heading --}}
                     <div
                         class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between">
-                        {{-- <a href="#_" --}}
-                        {{-- class="relative z-40 px-3 py-2 mr-0 text-sm font-bold text-pink-500 md:px-5 lg:text-white sm:mr-3 md:mt-0">Login</a> --}}
-                        {{-- <a href="#_"
-                        class="relative z-40 inline-block w-auto h-full px-5 py-3 text-sm font-bold bg-brown100 leading-none text-white transition-all transition duration-100 duration-300 bg-brown100 rounded shadow-md fold-bold lg:bg-white lg:text-indigo-700 sm:w-full lg:shadow-none hover:shadow-xl">Hubungi
-
-
-                        Kami --}}
-                        {{-- </a> --}}
+   
                         <a href=""
-                            class="relative z-40 py-2 px-2 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
+                            class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
                             Kami</a>
 
                         <svg class="absolute top-0 left-0 hidden w-screen max-w-3xl -mt-64 -ml-12 lg:block"
@@ -146,12 +140,11 @@
             <div
                 class="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64">
                 <div
-                    class="container flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
+                    class="container group flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
                     <div
                         class="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">
                         <h1 class="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-3xl xl:mb-8">
-                            Sebuah
-                            kreasi yang sesuai dengan kepribadian
+                            Sebuah kreasi yang sesuai dengan kepribadian
                             anda</h1>
 
                         <p class="pr-0 mb-8 text-base text-subtitle sm:text-lg xl:text-xl lg:pr-20">Ubah tampilan rumah
@@ -159,8 +152,7 @@
                             Anda, ubah perspektif orang lain</p>
 
                         <a href=""
-                            class="relative self-startinline-block w-auto px-8 py-2  mb-10 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full ml-12">Beli
-                            Sekarang</a>
+                            class="relative self-startinline-block w-auto px-8 py-2  mb-10 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Beli Sekarang</a>
 
 
                         <!-- Integrates with section -->
@@ -170,10 +162,17 @@
                         </div>
 
                     </div>
-                    <div class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10">
-                        <div class="container relative left-1 w-full max-w-2xl lg:absolute xl:max-w-6xl lg:w-screen">
+                    <div class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 lg:mr-10">
+                        <div class="relative group  container relative  w-full max-w-2xl lg:absolute xl:max-w-6xl lg:w-screen">
+
                             <img src="{{ asset('assets/img/background/bg1.png') }}"
                                 class="w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12">
+ <div class="opacity-0 group-hover:opacity-100 duration-500 absolute inset-x-0 bottom-1 flex justify-center items-end">
+ <img src="{{ asset('assets/img/background/bg2.png') }}" class="w-12 lg:w-24 h-auto  mb-24 ml-80  xl:mt-40 lg:mb-12 lg:h-full lg:-mr-52">
+
+
+ </div>
+
                         </div>
                     </div>
                 </div>
@@ -183,22 +182,24 @@
 
         <!-- BEGIN FEATURES SECTION -->
         <div id="features"
-            class="relative w-full px-8 py-10 border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
+            class="relative w-full px-8 pt-10  md:py-0 lg:py-24 xl:py-40 xl:px-0">
 
             <div class="container flex flex-col items-center justify-between h-full max-w-6xl mx-auto">
 
                 {{-- <h2 class="my-5 text-base font-medium tracking-tight text-indigo-500 uppercase">Our Features</h2> --}}
                 <h1
-                    class="max-w-2xl px-5 mt-2 text-choco text-3xl text-center font-black leading-tight  sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
+                    class="max-w-2xl px-5 md:mt-4 mt-2 text-choco text-3xl text-center font-black leading-tight  sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
 
 
                     Kenapa Memilih Kami?</h1>
-                <div class="flex flex-col  sm:rounded-lg p-10 lg:rounded-lg w-full mt-10 lg:flex-row sm:mt-0 lg:mt-10">
+                <div class="flex flex-col sm:rounded-lg p-10 lg:rounded-lg w-full mt-10 lg:flex-row sm:mt-0 lg:mt-10">
 
 
 
                     <div class="flex flex-col md:flex-row mt-10 text-center md:-mx-4">
-                        <div class="bg-white rounded-lg shadow-lg p-8 md:mx-4">
+                        <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100 ">
+
+
                             <img class="mx-auto mb-6 w-20 h-20"
                                 src="{{ asset("assets/img/accounting.png") }}" alt="">
 
@@ -207,13 +208,9 @@
 
                             <p class="mt-1 text-subtitle">Menggunakan material terbaik dan tenaga ahli</p>
 
-
-
-
-
                         </div>
 
-                        <div class="bg-white rounded-lg shadow-lg p-8 md:mx-4">
+                        <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
                             <img class="mx-auto mb-6 w-20 h-20"
                                 src="{{ asset("assets/img/user-experience.png") }}" alt="">
 
@@ -226,7 +223,7 @@
 
                         </div>
 
-                        <div class="bg-white rounded-lg shadow-lg p-8 md:mx-4">
+                        <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
                             <img class="mx-auto mb-6 w-20 h-20"
                                 src="{{ asset("assets/img/accounting.png") }}" alt="">
 
@@ -235,13 +232,9 @@
 
                             <p class="mt-1 text-subtitle">Menggunakan material terbaik dan tenaga ahli</p>
 
-
-
-
-
                         </div>
 
-                        <div class="bg-white rounded-lg shadow-lg p-8 md:mx-4">
+                        <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
                             <img class="mx-auto mb-6 w-20 h-20"
                                 src="{{ asset("assets/img/user-experience.png") }}" alt="">
 
@@ -265,14 +258,15 @@
         <!-- END FEATURES SECTION -->
 
 
-        <!-- Pricing Section -->
+        <!-- product Section -->
         <div class="relative px-8 py-10 bg-white border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
 
 
-            <div id="pricing" class="container flex flex-col items-center h-full max-w-6xl mx-auto">
+            <div id="product" class="container flex flex-col items-center h-full max-w-6xl mx-auto">
 
                 <h1
-                    class="max-w-2xl px-5 mt-2 text-choco text-3xl text-center font-black leading-tight  sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
+                    class="max-w-2xl px-5 md:pb-10 lg:pb-10 text-choco text-3xl text-center font-black leading-tight sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
+
                     Produk Terbaru Kami</h1>
             </div>
 
@@ -303,7 +297,7 @@
 
 
             <div
-                class=" mx-0 p-10 grid mb-32 grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+                class=" mx-0 p-10 grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
 
 
                 <!--Card 1-->
@@ -356,166 +350,165 @@
 
         <!-- Start makeover -->
         <div id="makeover"
-            class="flex items-center justify-center w-full px-8 py-10 border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
-            <div class="w-full mx-auto">
+            class="flex items-center justify-center w-full px-8 py-10  md:py-16 lg:py-24 xl:py-40 xl:px-0">
+            <div class="w-full ">
                 {{-- <div class="flex-col items-center  "> --}}
                 <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl pr-8 mx-auto text-center">
 
                     <h2
-                        class="text-3xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-3xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">
+                        class="text-2xl font-bold leading-10 tracking-tight text-choco sm:text-3xl sm:leading-none md:text-3xl lg:text-3xl xl:text-3xl">
+
                         Makeover Terbaru Kami</h2>
-                    <p class="my-6 text-xl font-medium text-gray-500">Kami memiliki lebih dari 300+ proyek yang berhasil
+                    <p class="my-6 text-xl lg:text-sm font-medium text-greyold">Kami memiliki lebih dari 300+ proyek
+
+                        yang berhasil
+
                         dijalankan dan memuaskan harapan pelanggan kami.</p>
                 </div>
-                <div class="container my-12 mx-auto px-4 md:px-12">
-                    <div class="flex flex-wrap -mx-1 lg:-mx-4 bg-black">
+                <div class="container my-12  mx-auto lg:px-4 md:px-12">
+
+                    <div class="flex flex-wrap mx-1 lg:mx-12 ">
 
                         <!-- Column -->
-                        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2">
+                        <div class="my-1 md:mt-5 px-1  md:w-2/5 lg:my-8 lg:px-4 md:px-4 lg:w-2/5">
 
-                            <!-- Article -->
-                            <article class="overflow-hidden rounded-lg shadow-lg">
 
-                                <a href="#">
-                                    <img alt="Placeholder" class="block h-auto w-full"
-                                        src="https://picsum.photos/600/400/?random">
-                                </a>
+                            <div
+                                class="  lg:border-l-0  lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r  flex flex-col justify-between leading-normal">
+                                <div class="  ">
+                                    <a href="#">
+                                        <img alt="Placeholder"
+                                            class=" object-cover  h-96 w-96 lg:h-96 lg:w-96  rounded-xl"
+                                            src="https://picsum.photos/600/400/?random">
 
-                                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                    <h1 class="text-lg">
-                                        <a class="no-underline hover:underline text-black" href="#">
-                                            Article Title
-                                        </a>
-                                    </h1>
-                                    <p class="text-grey-darker text-sm">
-                                        11/1/19
+                                    </a>
+                                </div>
+                                <div class=" col-span-2 w-full mt-5">
+
+                                    <h4 class="text-lg text-choco ">Rumah bergaya vintage yang membawa
+                                        kembali memori</h4>
+                                    <p class="mt-2 text-sm text-greyold">In publishing and graphic design, Lorem ipsum
+                                        is a
+                                        placeholder text commonly used to demonstrate the visual form of a document
+                                        or a typeface
                                     </p>
-                                </header>
 
-                                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                                    <a class="flex items-center no-underline hover:underline text-black" href="#">
-                                        <img alt="Placeholder" class="block rounded-full"
-                                            src="https://picsum.photos/32/32/?random">
-                                        <p class="ml-2 text-sm">
-                                            Author Name
-                                        </p>
-                                    </a>
-                                    <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                                        <span class="hidden">Like</span>
-                                        <i class="fa fa-heart"></i>
-                                    </a>
-                                </footer>
+                                </div>
 
-                            </article>
+                            </div>
+
                             <!-- END Article -->
 
                         </div>
                         <!-- END Column -->
-                        <div class="bg-choco columns-2 w-1/2 md:w-1/2 lg:w-1/2">
+                        <div class="mt-8 columns-1 lg:pl-5 md:w-3/5 lg:w-3/5">
 
 
 
-                            <!-- Column -->
-                            <div class="bg-white my-1 px-1 w-full md:w-full lg:my-4 lg:px-4">
+                            <div class="lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
 
-                                <!-- Article -->
-                                <article class="overflow-hidden rounded-lg shadow-lg">
 
+                                  <div class="row-span-2   ">
+                                        <a href="#">
+                                              <img alt="Placeholder" class="object-cover w-24 h-24 md:w-48 md:h-48 lg:h-48 lg:w-48 rounded-lg" src="https://picsum.photos/600/400/?random">
+                                        </a>
+                                  </div>
+                                  <div class="row-span-2 col-span-2 w-full ml-5">
+
+                                        <h4 class="text-lg text-choco ">Rumah bergaya vintage yang membawa
+                                              kembali memori</h4>
+                                        <p class="mt-2 text-sm text-greyold">In publishing and graphic design, Lorem ipsum
+                                              is a
+                                              placeholder text commonly used to demonstrate the visual form of a document
+                                              or a typeface
+                                        </p>
+                                  </div>
+                            </div>
+
+
+                            <div class="lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
+
+
+                                <div class="row-span-2   ">
                                     <a href="#">
-                                        <img alt="Placeholder" class="block h-auto w-1/2"
+                                        <img alt="Placeholder"
+                                            class="object-cover w-24 h-24 md:w-48 md:h-48 lg:h-48 lg:w-48 rounded-lg"
+
                                             src="https://picsum.photos/600/400/?random">
                                     </a>
+                                </div>
+                                <div class="row-span-2 col-span-2 w-full ml-5">
 
-                                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                        <h1 class="text-lg">
-                                            <a class="no-underline hover:underline text-black" href="#">
-                                                Article Title
-                                            </a>
-                                        </h1>
-                                        <p class="text-grey-darker text-sm">
-                                            11/1/19
-                                        </p>
-                                    </header>
-
-                                    <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                                        <a class="flex items-center no-underline hover:underline text-black" href="#">
-                                            <img alt="Placeholder" class="block rounded-full"
-                                                src="https://picsum.photos/32/32/?random">
-                                            <p class="ml-2 text-sm">
-                                                Author Name
-                                            </p>
-                                        </a>
-                                        <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                                            <span class="hidden">Like</span>
-                                            <i class="fa fa-heart"></i>
-                                        </a>
-                                    </footer>
-
-                                </article>
-                                <!-- END Article -->
-
+                                    <h4 class="text-lg text-choco ">Rumah bergaya vintage yang membawa
+                                        kembali memori</h4>
+                                    <p class="mt-2 text-sm text-greyold">In publishing and graphic design, Lorem ipsum
+                                        is a
+                                        placeholder text commonly used to demonstrate the visual form of a document
+                                        or a typeface
+                                    </p>
+                                </div>
                             </div>
-                            <!-- END Column -->
-
-                            <!-- Column -->
-                            <div class="bg-white my-1 px-1 w-full md:w-full lg:my-4 lg:px-4">
-
-
-                                <!-- Article -->
-                                <article class="overflow-hidden rounded-lg shadow-lg">
-
-                                    <a href="#">
-                                        <img alt="Placeholder" class="block h-auto w-1/2"
-                                            src="https://picsum.photos/600/400/?random">
-                                    </a>
-
-                                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                        <h1 class="text-lg">
-                                            <a class="no-underline hover:underline text-black" href="#">
-                                                Article Title
-                                            </a>
-                                        </h1>
-                                        <p class="text-grey-darker text-sm">
-                                            11/1/19
-                                        </p>
-                                    </header>
-
-                                    <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                                        <a class="flex items-center no-underline hover:underline text-black" href="#">
-                                            <img alt="Placeholder" class="block rounded-full"
-                                                src="https://picsum.photos/32/32/?random">
-                                            <p class="ml-2 text-sm">
-                                                Author Name
-                                            </p>
-                                        </a>
-                                        <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                                            <span class="hidden">Like</span>
-                                            <i class="fa fa-heart"></i>
-                                        </a>
-                                    </footer>
-
-                                </article>
-                                <!-- END Article -->
-
-                            </div>
-                            <!-- END Column -->
-
                         </div>
-
-
-
-
                     </div>
                 </div>
-
-
             </div>
 
         </div>
 
+        <!-- End makeover-->
+
+        <div id="maps" class="flex items-center  justify-center lg:w-full w-full 2xl:w-full 2xl:h-full  md:py-0 xl:px-0">
+
+              {{-- <div class="w-full mx-auto"> --}}
+                    <div class="mapouter">
+                          <div class="gmap_canvas"><iframe width="1024" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Jl.%20Gedongkuning%20No.60,%20Pelem%20Mulong,%20Rejowinangun,%20Kec.%20Kotagede,%20Kota%20Yogyakarta,%20Daerah%20Istimewa%20Yogyakarta%2055171&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br>
+                                <style>
+                                      .mapouter {
+                                            position: relative;
+                                            text-align: right;
+                                            height: 600px;
+                                            width: 1024px;
+                                      }
+
+                                </style><a href="https://www.embedgooglemap.net">google maps in website</a>
+                                <style>
+                                      .gmap_canvas {
+                                            overflow: hidden;
+                                            background: none !important;
+                                            height: 600px;
+                                            width: 1024px;
+                                      }
+
+                                </style>
+                          </div>
+                    </div>
 
 
-        <!-- End Testimonials-->
+
+              {{-- </div> --}}
+
+        </div>
+
+<div id="socialMedia" class="flex items-center bg-backgroundHeader p-10 justify-center w-full 2xl:w-full 2xl:h-full  md:py-16 lg:py-24 sm:py-20 xl:px-0">
+
+
+      <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl  mx-auto text-center">
+
+            <h2 class="text-2xl font-bold leading-10 tracking-tight text-choco sm:text-3xl sm:leading-none md:text-3xl lg:text-3xl xl:text-3xl">
+                  Ingin Tahu Lebih Detail?</h2>
+            <p class="my-6 text-xl lg:text-sm font-medium text-subtitle">Kami akan selalu memberikan penjelasan terbaik terkait segala pertanyaan mengenai furniture dan makeover rumah anda</p>
+
+            {{-- <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden"> --}}
+                  {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
+                   <a href="" class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
+                         Kami</a>
+
+            {{-- </div> --}}
+
+      </div>
+
+
+</div>
 
 
 
@@ -523,20 +516,13 @@
         <footer class="px-4 pt-12 pb-8 text-white bg-white border-t border-gray-200">
             <div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
                 <div class="w-full pl-12 mr-4 text-left lg:w-1/4 sm:text-center sm:pl-0 lg:text-left">
-                    <a href="/"
-                        class="flex justify-start block text-left sm:text-center lg:text-left sm:justify-center lg:justify-start">
-                        <span class="flex items-start sm:items-center">
-                            <svg class="w-auto h-6 text-gray-800 fill-current" viewBox="0 0 194 116"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g fill-rule="evenodd">
-                                    <path
-                                        d="M96.869 0L30 116h104l-9.88-17.134H59.64l47.109-81.736zM0 116h19.831L77 17.135 67.088 0z">
-                                    </path>
-                                    <path d="M87 68.732l9.926 17.143 29.893-51.59L174.15 116H194L126.817 0z"></path>
-                                </g>
-                            </svg>
-                        </span>
-                    </a>
+                   
+                     <a href="/" class="flex justify-start block text-left sm:text-center lg:text-left sm:justify-center lg:justify-start relative flex items-center  font-black leading-none">
+
+                           <img src="{{ asset("assets/img/frl.png") }}" class="w-12 h-12 " alt="">
+                          
+                     </a>
+
                     <p class="mt-6 mr-4 text-base text-gray-500">Crafting the next-level of user experience and
                         engagement.
                     </p>
@@ -558,7 +544,7 @@
                                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Integrations</a>
                         </li>
                         <li><a href="#_"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Pricing</a>
+                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Product</a>
                         </li>
                         <li><a href="#_"
                                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">FAQ</a>
@@ -575,20 +561,7 @@
                                 of
                                 Service</a></li>
                     </ul>
-                    <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
-                        <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
-                            TailwindCSS
-                        </li>
-                        <li><a href="https://devdojo.com/tailwindcss/components"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Tailwind
-                                Components</a></li>
-                        <li><a href="https://devdojo.com/tailwindcss/templates"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Tailwind
-                                Templates</a></li>
-                        <li><a href="https://devdojo.com/tails"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Tails</a>
-                        </li>
-                    </ul>
+                 
                     <div class="flex flex-col w-full text-gray-700">
                         <div class="inline-block px-3 py-2 mt-5 font-bold text-gray-800 uppercase md:mt-0">Follow Us
                         </div>
@@ -628,8 +601,6 @@
             <div class="pt-4 pt-6 mt-10 text-center text-gray-500 border-t border-gray-100">© 2020 Landmark. All rights
                 reserved.</div>
 
-            <div class="pt-2 pt-4 mt-2 text-center text-gray-600 border-t border-gray-100">Distributed By <a
-                    href="https://themewagon.com/">Themewagon</a></div>
         </footer>
 
         <!-- a little JS for the mobile nav button -->
