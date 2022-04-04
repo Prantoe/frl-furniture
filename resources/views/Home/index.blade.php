@@ -42,7 +42,7 @@
 
     <body class="overflow-x-hidden antialiased ">
 
-        <div class=" bg-backgroundHeader lg:h-1/4">
+        <div class=" bg-backgroundHeader ">
 
 
 
@@ -59,14 +59,15 @@
 
                     <nav id="nav"
                         class="absolute top-0 left-0 z-50 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
-                        <a href="#"
+                        <a href="/"
                             class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Beranda</a>
-                        <a href="#features"
-                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang</a>
+                        <a href="{{ asset("about") }}"
+                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang Kami</a>
                         <a href="{{ asset("productsList") }}"
 
                             class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Produk</a>
-                        <a href="#testimonials"
+                        <a href="{{ asset("makeOverList") }}"
+
                             class="font-bold duration-100 transition-color hover:text-brown">Makeover</a>
                         <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
                             {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
@@ -201,11 +202,11 @@
 
 
                     Kenapa Memilih Kami?</h1>
-                <div class="flex flex-col sm:rounded-lg p-10 lg:rounded-lg w-full mt-10 lg:flex-row sm:mt-0 lg:mt-10">
+                <div class="flex flex-col sm:rounded-lg p-5 pb-10 lg:rounded-lg w-full mt-5 lg:flex-row sm:mt-0 lg:mt-10">
 
 
 
-                    <div class="flex flex-col md:flex-row mt-10 text-center md:-mx-4">
+                    <div class="flex flex-col md:flex-row text-center md:-mx-4">
                         <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100 ">
 
 
@@ -215,7 +216,7 @@
 
                             <h4 class="text-xl text-brown font-bold">Profesional </h4>
 
-                            <p class="mt-1 text-subtitle">Menggunakan material terbaik dan tenaga ahli</p>
+                            <p class="mt-1 text-subtitle">Tenaga ahli di bidang makeover</p>
 
                         </div>
 
@@ -234,24 +235,24 @@
 
                         <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
                             <img class="mx-auto mb-6 w-20 h-20"
-                                src="{{ asset("assets/img/accounting.png") }}" alt="">
+                                src="{{ asset("assets/img/quality.png") }}" alt="">
 
 
-                            <h4 class="text-xl text-brown font-bold">Profesional </h4>
+                            <h4 class="text-xl text-brown font-bold">Kualitas </h4>
 
-                            <p class="mt-1 text-subtitle">Menggunakan material terbaik dan tenaga ahli</p>
+                            <p class="mt-1 text-subtitle">Menggunakan material terbaik</p>
 
                         </div>
 
                         <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
                             <img class="mx-auto mb-6 w-20 h-20"
-                                src="{{ asset("assets/img/user-experience.png") }}" alt="">
+                                src="{{ asset("assets/img/furniture.png") }}" alt="">
 
 
 
-                            <h4 class="text-xl text-brown font-bold">Berpengalaman</h4>
+                            <h4 class="text-xl text-brown font-bold">Banyak Pilihan</h4>
 
-                            <p class="mt-1 text-subtitle">Telah mengerjakan ratusan proyek</p>
+                            <p class="mt-1 text-subtitle">Tersedia berbagai macam produk</p>
 
 
                         </div>
@@ -499,8 +500,8 @@
                 <h2
                     class="text-2xl font-bold leading-10 tracking-tight text-choco sm:text-3xl sm:leading-none md:text-3xl lg:text-3xl xl:text-3xl">
                     Ingin Tahu Lebih Detail?</h2>
-                <p class="my-6 text-xl lg:text-sm font-medium text-subtitle">Kami akan selalu memberikan penjelasan
-                    terbaik terkait segala pertanyaan mengenai furniture dan makeover rumah anda</p>
+                <p class="my-6 text-xl lg:text-sm font-medium text-subtitle">FRL Furniture menawarkan berbagai macam furniture berbahan dasar kayu jati belanda, jati, dan mahoni dengan konsep minimalis, kontemporer, maupun modern dengan kualitas terbaik dan harga terjangkau.</p>
+
 
                 {{-- <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden"> --}}
                 {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
@@ -530,57 +531,47 @@
 
                     </a>
 
-                    <p class="mt-6 mr-4 text-base text-gray-500">Crafting the next-level of user experience and
-                        engagement.
+                    <p class="mt-6 mr-4 text-base text-gray-500"> Jl Gedongkuning Selatan No 14 B Yogyakarta
+
                     </p>
 
 
                 </div>
 
-
-
-
                 <div class="block w-full pl-10 mt-6 text-sm lg:w-3/4 sm:flex lg:mt-0">
                     <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
                         <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
                             Product</li>
-                        <li><a href="#_"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Features</a>
+                        <li><a href="{{ asset("about") }}"
+
+                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Tentang Kami</a>
                         </li>
-                        <li><a href="#_"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Integrations</a>
+                        <li><a href="{{ asset("productsList") }}"
+
+                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Produk</a>
                         </li>
-                        <li><a href="#_"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Product</a>
+                        <li><a href="{{ asset("makeOverList") }}"
+
+                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Makeover</a>
                         </li>
-                        <li><a href="#_"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">FAQ</a>
-                        </li>
+                      
                     </ul>
                     <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
                         <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
-                            Company</li>
-                        <li><a href="#_"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Privacy</a>
+                            Contact</li>
+                        <li><a href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678"
+
+                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"> 0819 0460 8678</a>
+
                         </li>
-                        <li><a href="#_"
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Terms
-                                of
-                                Service</a></li>
+                       
                     </ul>
 
                     <div class="flex flex-col w-full text-gray-700">
                         <div class="inline-block px-3 py-2 mt-5 font-bold text-gray-800 uppercase md:mt-0">Follow Us
                         </div>
                         <div class="flex justify-start pl-4 mt-2">
-                            <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
-                                target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/fitarizqilailiyah">
-
-                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                                     <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                               </svg>
-
-                            </a>
+                            
                             <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
                                 target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/frl_furniture/">
 
@@ -625,14 +616,5 @@
             }
 
         </script>
-        {{-- swipper --}}
-
-
-
-
     </body>
-
-
-
-
 </html>

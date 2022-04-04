@@ -35,4 +35,18 @@ class HomeController extends Controller
           return view('Home.products',compact('products'))
           ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function makeOverList()
+    {
+    $services = Service::with('service_images')->latest()->paginate();
+
+    return view('Home.makeover',compact('services'))
+    ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function about()
+    {
+
+    return view('Home.about');
+    }
 }

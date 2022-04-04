@@ -8,7 +8,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css">
 
-        <title>Produk FRL Furniture</title>
+        <title>Tentang FRL Furniture</title>
 
          <style>
                <blade media|(max-width%3A1520px)%20%7B>.left-svg {
@@ -34,11 +34,12 @@
 
     </head>
 
-    <body class="bg-backgroundHeader overflow-x-hidden antialiased">
-<div class=" bg-backgroundHeader lg:h-1/4">
+    <body class="bg-white overflow-x-hidden antialiased">
+<div class=" bg-white lg:h-1/4">
 
 
-    <header class="relative z-50 w-full bg-white h-24 ">
+    <header class="relative z-50 w-full bg-backgroundHeader h-24 ">
+
           <div class=" z-30  flex items-center justify-center h-full max-w-6xl px-8 mx-auto sm:justify-between xl:px-0">
 
 
@@ -105,40 +106,30 @@
     </header>
     </div>
 
-    <div class="container flex flex-col items-center mt-20 h-full max-w-3xl mx-auto">
-
-          <h1 class="max-w-2xl px-5 md:pb-10 lg:pb-0 text-choco text-3xl text-center font-black leading-tight sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
-
-                Produk Kami</h1>
-    </div>
-    <nav  class=" flex flex-row flex-row w-auto justify-center text-greyold-100  border-t border-gray-200 md:w-auto md:flex-row  text-base bg-transparent mt-5 border-none py-0 flex relative">
 
 
 
-          <a href="#" class="ml-0 mr-3 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Semua Produk</a>
-          <a href="#" class="text-gray-600 mr-3 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Sofa</a>
-          <a href="#" class="text-gray-600 mr-3 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Meja</a>
-          <a href="#" class="text-gray-600 mr-3 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Lemari</a>
-          <a href="#" class="text-gray-600 mr-3 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Kursi</a>
+        <div id="socialMedia" class="flex items-center bg-white p-10 justify-center w-full 2xl:w-full 2xl:h-full  md:py-16 lg:py-24 sm:py-20 xl:px-0">
 
 
-    </nav>
+              <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl  mx-auto text-center">
+
+                    <h2 class="text-2xl font-bold leading-10 tracking-tight text-choco sm:text-3xl sm:leading-none md:text-3xl lg:text-3xl xl:text-3xl">
+                          Tentang Kami</h2>
+                    <p class="my-6 text-xl m-20 lg:text-sm font-medium text-subtitle">FRL Furniture adalah perusahaan yang didirikan pada September 2018 di Jl. Gedongkuning Selatan No 9 B Banguntapan Bantul Yogyakarta, dan mulai menjual dengan sitem online pada tahun 2020. Kebutuhan konsumen yang dicari saat ini adalah kemudahan, kenyamanan, dan keamanan ketika mereka ingin melakukan renovasi dan perbaikan rumah. Oleh karena itu, FRL Furniture menyediakan solusi untuk kebutuhan tersebut. Maka jangan ragu untuk berkonsultasi dengan kami.</p>
+
+                  
+                    <a href="https://linktr.ee/frl_furniture" target="_blank" class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
+                          Kami</a>
+
+                    {{-- </div> --}}
+
+              </div>
 
 
-        <div class="container mx-auto  space-y-2 mt-10 lg:space-x-0 lg:space-y-2 lg:gap-4 lg:grid lg:grid-cols-4">
+        </div>
 
-            @foreach($products as $key => $value)
-            <div class="max-w-xs cursor-pointer ml-8 mb-5 bg-white  rounded-lg hover:shadow-2xl">
-                <img class="w-full h-48"
-                    src="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}"
 
-                    alt="product" />
-                <div class="px-6 py-4">
-                    <h4 class="mb-3 text-xl font-semibold tracking-tight text-gray-800">{{ $value->name }}</h4>
-                    <p class="leading-normal text-gray-700">{{ $value->description }}.</p>
-                </div>
-            </div>
-            @endforeach
    
 
         </div>

@@ -8,7 +8,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css">
 
-        <title>Produk FRL Furniture</title>
+        <title>Make Over FRL Furniture</title>
 
          <style>
                <blade media|(max-width%3A1520px)%20%7B>.left-svg {
@@ -35,7 +35,6 @@
     </head>
 
     <body class="bg-backgroundHeader overflow-x-hidden antialiased">
-<div class=" bg-backgroundHeader lg:h-1/4">
 
 
     <header class="relative z-50 w-full bg-white h-24 ">
@@ -64,8 +63,7 @@
                 {{-- heading --}}
                 <div class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between">
 
-                      <a href="https://linktr.ee/frl_furniture" target="_blank" class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
-                            Kami</a>
+                      <a href="https://linktr.ee/frl_furniture" target="_blank" class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi Kami</a>
 
                       <svg class="absolute top-0 left-0 hidden w-screen max-w-3xl -mt-64 -ml-12 lg:block" viewBox="0 0 818 815" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs>
@@ -103,38 +101,27 @@
 
           </div>
     </header>
-    </div>
 
     <div class="container flex flex-col items-center mt-20 h-full max-w-3xl mx-auto">
 
           <h1 class="max-w-2xl px-5 md:pb-10 lg:pb-0 text-choco text-3xl text-center font-black leading-tight sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
 
-                Produk Kami</h1>
+                Make Over Kami</h1>
     </div>
-    <nav  class=" flex flex-row flex-row w-auto justify-center text-greyold-100  border-t border-gray-200 md:w-auto md:flex-row  text-base bg-transparent mt-5 border-none py-0 flex relative">
-
-
-
-          <a href="#" class="ml-0 mr-3 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Semua Produk</a>
-          <a href="#" class="text-gray-600 mr-3 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Sofa</a>
-          <a href="#" class="text-gray-600 mr-3 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Meja</a>
-          <a href="#" class="text-gray-600 mr-3 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Lemari</a>
-          <a href="#" class="text-gray-600 mr-3 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Kursi</a>
-
-
-    </nav>
+ 
 
 
         <div class="container mx-auto  space-y-2 mt-10 lg:space-x-0 lg:space-y-2 lg:gap-4 lg:grid lg:grid-cols-4">
 
-            @foreach($products as $key => $value)
+            @foreach($services as $key => $value)
+
             <div class="max-w-xs cursor-pointer ml-8 mb-5 bg-white  rounded-lg hover:shadow-2xl">
                 <img class="w-full h-48"
-                    src="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}"
+                    src="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}"
 
                     alt="product" />
                 <div class="px-6 py-4">
-                    <h4 class="mb-3 text-xl font-semibold tracking-tight text-gray-800">{{ $value->name }}</h4>
+                    <h4 class="mb-3 text-xl font-semibold tracking-tight text-gray-800">{{ $value->title }}</h4>
                     <p class="leading-normal text-gray-700">{{ $value->description }}.</p>
                 </div>
             </div>

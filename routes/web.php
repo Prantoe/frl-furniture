@@ -26,6 +26,8 @@ Route::middleware('auth')->resource('categorys', CategoryController::class);
 
 Route::resource('home', HomeController::class);
 Route::get('productsList', [HomeController::class, 'productsList']);
+Route::get('makeOverList', [HomeController::class, 'makeOverList']);
+Route::get('about', [HomeController::class, 'about']);
 
 // auth
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
