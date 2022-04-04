@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\ProductImages;
 use Illuminate\Http\Request;
-use Validator;
-use DB;
+// use Validator;
+// use DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {

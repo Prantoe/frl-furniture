@@ -5,7 +5,8 @@ use Hash;
 use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use DB;
+// use DB;
+use Illuminate\Support\Facades\DB;
 class CustomAuthController extends Controller
 {
     public function index()

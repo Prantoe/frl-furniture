@@ -63,24 +63,27 @@
                             class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Beranda</a>
                         <a href="#features"
                             class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang</a>
-                        <a href="#Product"
+                        <a href="{{ asset("productsList") }}"
+
                             class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Produk</a>
                         <a href="#testimonials"
                             class="font-bold duration-100 transition-color hover:text-brown">Makeover</a>
                         <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
                             {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
-                            <a href="#_"
+                            <a href="https://linktr.ee/frl_furniture" target="_blank"
+
                                 class="relative inline-block w-full px-5 py-3 text-sm leading-none text-center text-white bg-green-500 fold-bold">Hubungi
                                 Kami
                             </a>
                         </div>
                     </nav>
 
-{{-- heading --}}
+                    {{-- heading --}}
                     <div
                         class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between">
-   
-                        <a href=""
+
+                        <a href="https://linktr.ee/frl_furniture" target="_blank"
+
                             class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
                             Kami</a>
 
@@ -151,8 +154,12 @@
 
                             Anda, ubah perspektif orang lain</p>
 
-                        <a href=""
-                            class="relative self-startinline-block w-auto px-8 py-2  mb-10 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Beli Sekarang</a>
+                        <a href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678"
+
+
+
+                            class="relative self-startinline-block w-auto px-8 py-2  mb-10 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Beli
+                            Sekarang</a>
 
 
                         <!-- Integrates with section -->
@@ -163,15 +170,18 @@
 
                     </div>
                     <div class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 lg:mr-10">
-                        <div class="relative group  container relative  w-full max-w-2xl lg:absolute xl:max-w-6xl lg:w-screen">
+                        <div
+                            class="relative group  container relative  w-full max-w-2xl lg:absolute xl:max-w-6xl lg:w-screen">
 
                             <img src="{{ asset('assets/img/background/bg1.png') }}"
                                 class="w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12">
- <div class="opacity-0 group-hover:opacity-100 duration-500 absolute inset-x-0 bottom-1 flex justify-center items-end">
- <img src="{{ asset('assets/img/background/bg2.png') }}" class="w-12 lg:w-24 h-auto  mb-24 ml-80  xl:mt-40 lg:mb-12 lg:h-full lg:-mr-52">
+                            <div
+                                class="opacity-0 group-hover:opacity-100 duration-500 absolute inset-x-0 bottom-1 flex justify-center items-end">
+                                <img src="{{ asset('assets/img/background/bg2.png') }}"
+                                    class="w-12 lg:w-24 h-auto  mb-24 ml-80  xl:mt-40 lg:mb-12 lg:h-full lg:-mr-52">
 
 
- </div>
+                            </div>
 
                         </div>
                     </div>
@@ -181,8 +191,7 @@
         </div>
 
         <!-- BEGIN FEATURES SECTION -->
-        <div id="features"
-            class="relative w-full px-8 pt-10  md:py-0 lg:py-24 xl:py-40 xl:px-0">
+        <div id="features" class="relative w-full px-8 pt-10  md:py-0 lg:py-24 xl:py-40 xl:px-0">
 
             <div class="container flex flex-col items-center justify-between h-full max-w-6xl mx-auto">
 
@@ -276,7 +285,7 @@
 
 
                 <a href="#"
-                    class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">All</a>
+                    class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Terbaru</a>
                 <a href="#"
                     class="text-gray-600 mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Sofa</a>
                 <a href="#"
@@ -296,26 +305,32 @@
             {{-- <div class="w-full  mx-auto"> --}}
 
 
-            <div
-                class=" mx-0 p-10 grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            <div class=" mx-0 p-10 grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
 
- @foreach($products as $key => $value)
+                @foreach($products as $key => $value)
 
-                <!--Card 1-->
-                <div class="swiper-slide  overflow-hidden  h-72 object-cover">
-                    <div class="bg-white rounded-lg  border-2 p-8 md:mx-4">
+                    <!--Card 1-->
+                    <div class="swiper-slide  overflow-hidden  h-72 object-cover ">
+                        <div class="bg-white rounded-lg  border-2 p-8 md:mx-4 shadow-md lg:shadow-sm md:mx-4 hover:bg-stone-100">
 
-                        <img class="mx-auto h-32"
-                            src="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}" alt="">
+                            <a href="" class="">
+
+
+                                <img class="mx-auto h-32"
+                                    src="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}"
+                                    alt="">
+
+
+                            </a>
+
+                        </div>
+                        <p class="mt-1 lg:ml-5 text-greyold cursor-pointer">{{ $value->name }}</p>
+                        <h4 class="text-xl lg:ml-5 text-choco font-bold cursor-pointer">{{ $value->description }}</h4>
+                        <p class="mt-1 lg:ml-5 text-greyold cursor-pointer">Rp.{{ $value->price }},-</p>
+
 
                     </div>
-                    <p class="mt-1 text-greyold">{{ $value->name }}</p>
-
-                    <h4 class="text-xl text-choco font-bold">{{ $value->description }}</h4>
-                    <p class="mt-1 text-greyold">Rp.{{ $value->price }},-</p>
-                </div>
                 @endforeach
-
 
             </div>
 
@@ -352,24 +367,24 @@
                         <div class="my-1 md:mt-5 px-1  md:w-2/5 lg:my-8 lg:px-4 md:px-4 lg:w-2/5">
 
 
-                            <div
-                                class="  lg:border-l-0  lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r  flex flex-col justify-between leading-normal">
+                            <div class="lg:border-l-0 border-0  lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r  flex flex-col justify-between leading-normal">
+
                                 <div class="  ">
                                     <a href="#">
                                         <img alt="Placeholder"
                                             class=" object-cover  h-96 w-96 lg:h-96 lg:w-96  rounded-xl"
-                                            src="https://picsum.photos/600/400/?random">
+                                            src="{{ count($makeover->service_images) > 0 ? $makeover->service_images[0]->image : null }}">
+
+
 
                                     </a>
                                 </div>
                                 <div class=" col-span-2 w-full mt-5">
 
-                                    <h4 class="text-lg text-choco ">Rumah bergaya vintage yang membawa
-                                        kembali memori</h4>
-                                    <p class="mt-2 text-sm text-greyold">In publishing and graphic design, Lorem ipsum
-                                        is a
-                                        placeholder text commonly used to demonstrate the visual form of a document
-                                        or a typeface
+                                    <h4 class="text-lg text-choco ">{{ $makeover->title }}</h4>
+
+
+                                    <p class="mt-2 text-sm text-greyold">{{ $makeover->description }}
                                     </p>
 
                                 </div>
@@ -380,30 +395,10 @@
 
                         </div>
                         <!-- END Column -->
-                        <div class="mt-8 columns-1 lg:pl-5 md:w-3/5 lg:w-3/5">
+                        <div class="lg:mt-0 columns-1 lg:pl-5 md:w-3/5 lg:w-3/5">
 
 
-
-                            <div class="lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
-
-
-                                  <div class="row-span-2   ">
-                                        <a href="#">
-                                              <img alt="Placeholder" class="object-cover w-24 h-24 md:w-48 md:h-48 lg:h-48 lg:w-48 rounded-lg" src="https://picsum.photos/600/400/?random">
-                                        </a>
-                                  </div>
-                                  <div class="row-span-2 col-span-2 w-full ml-5">
-
-                                        <h4 class="text-lg text-choco ">Rumah bergaya vintage yang membawa
-                                              kembali memori</h4>
-                                        <p class="mt-2 text-sm text-greyold">In publishing and graphic design, Lorem ipsum
-                                              is a
-                                              placeholder text commonly used to demonstrate the visual form of a document
-                                              or a typeface
-                                        </p>
-                                  </div>
-                            </div>
-
+ @foreach($services as $key => $value)
 
                             <div class="lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
 
@@ -412,7 +407,30 @@
                                     <a href="#">
                                         <img alt="Placeholder"
                                             class="object-cover w-24 h-24 md:w-48 md:h-48 lg:h-48 lg:w-48 rounded-lg"
+                                            src="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}">
 
+                                    </a>
+                                </div>
+                                <div class="row-span-2 col-span-2 w-full ml-5">
+
+                                    <h4 class="text-lg text-choco ">{{ $value->title }}</h4>
+                                    <p class="mt-2 text-sm text-greyold">In publishing and graphic design, Lorem ipsum
+                                        is a
+                                        placeholder text commonly used to demonstrate the visual form of a document
+                                        or a typeface
+                                    </p>
+                                </div>
+                            </div>
+@endforeach
+
+                            {{-- <div
+                                class="lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
+
+
+                                <div class="row-span-2   ">
+                                    <a href="#">
+                                        <img alt="Placeholder"
+                                            class="object-cover w-24 h-24 md:w-48 md:h-48 lg:h-48 lg:w-48 rounded-lg"
                                             src="https://picsum.photos/600/400/?random">
                                     </a>
                                 </div>
@@ -426,7 +444,7 @@
                                         or a typeface
                                     </p>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -436,58 +454,67 @@
 
         <!-- End makeover-->
 
-        <div id="maps" class="flex items-center  justify-center lg:w-full w-full 2xl:w-full 2xl:h-full  md:py-0 xl:px-0">
+        <div id="maps"
+            class="flex items-center  justify-center lg:w-full w-full 2xl:w-full 2xl:h-full  md:py-0 xl:px-0">
 
-              {{-- <div class="w-full mx-auto"> --}}
-                    <div class="mapouter">
-                          <div class="gmap_canvas"><iframe width="1024" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Jl.%20Gedongkuning%20No.60,%20Pelem%20Mulong,%20Rejowinangun,%20Kec.%20Kotagede,%20Kota%20Yogyakarta,%20Daerah%20Istimewa%20Yogyakarta%2055171&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br>
-                                <style>
-                                      .mapouter {
-                                            position: relative;
-                                            text-align: right;
-                                            height: 600px;
-                                            width: 1024px;
-                                      }
+            {{-- <div class="w-full mx-auto"> --}}
+            <div class="mapouter">
+                <div class="gmap_canvas"><iframe width="1024" height="600" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=Jl.%20Gedongkuning%20No.60,%20Pelem%20Mulong,%20Rejowinangun,%20Kec.%20Kotagede,%20Kota%20Yogyakarta,%20Daerah%20Istimewa%20Yogyakarta%2055171&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                        href="https://123movies-to.org"></a><br>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: 600px;
+                            width: 1024px;
+                        }
 
-                                </style><a href="https://www.embedgooglemap.net">google maps in website</a>
-                                <style>
-                                      .gmap_canvas {
-                                            overflow: hidden;
-                                            background: none !important;
-                                            height: 600px;
-                                            width: 1024px;
-                                      }
+                    </style><a href="https://www.embedgooglemap.net">google maps in website</a>
+                    <style>
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            height: 600px;
+                            width: 1024px;
+                        }
 
-                                </style>
-                          </div>
-                    </div>
-
-
-
-              {{-- </div> --}}
-
-        </div>
-
-<div id="socialMedia" class="flex items-center bg-backgroundHeader p-10 justify-center w-full 2xl:w-full 2xl:h-full  md:py-16 lg:py-24 sm:py-20 xl:px-0">
+                    </style>
+                </div>
+            </div>
 
 
-      <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl  mx-auto text-center">
-
-            <h2 class="text-2xl font-bold leading-10 tracking-tight text-choco sm:text-3xl sm:leading-none md:text-3xl lg:text-3xl xl:text-3xl">
-                  Ingin Tahu Lebih Detail?</h2>
-            <p class="my-6 text-xl lg:text-sm font-medium text-subtitle">Kami akan selalu memberikan penjelasan terbaik terkait segala pertanyaan mengenai furniture dan makeover rumah anda</p>
-
-            {{-- <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden"> --}}
-                  {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
-                   <a href="" class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
-                         Kami</a>
 
             {{-- </div> --}}
 
-      </div>
+        </div>
+
+        <div id="socialMedia"
+            class="flex items-center bg-backgroundHeader p-10 justify-center w-full 2xl:w-full 2xl:h-full  md:py-16 lg:py-24 sm:py-20 xl:px-0">
 
 
-</div>
+            <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl  mx-auto text-center">
+
+                <h2
+                    class="text-2xl font-bold leading-10 tracking-tight text-choco sm:text-3xl sm:leading-none md:text-3xl lg:text-3xl xl:text-3xl">
+                    Ingin Tahu Lebih Detail?</h2>
+                <p class="my-6 text-xl lg:text-sm font-medium text-subtitle">Kami akan selalu memberikan penjelasan
+                    terbaik terkait segala pertanyaan mengenai furniture dan makeover rumah anda</p>
+
+                {{-- <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden"> --}}
+                {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
+                <a href="https://linktr.ee/frl_furniture" target="_blank"
+
+                    class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
+                    Kami</a>
+
+                {{-- </div> --}}
+
+            </div>
+
+
+        </div>
 
 
 
@@ -495,12 +522,13 @@
         <footer class="px-4 pt-12 pb-8 text-white bg-white border-t border-gray-200">
             <div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
                 <div class="w-full pl-12 mr-4 text-left lg:w-1/4 sm:text-center sm:pl-0 lg:text-left">
-                   
-                     <a href="/" class="flex justify-start block text-left sm:text-center lg:text-left sm:justify-center lg:justify-start relative flex items-center  font-black leading-none">
 
-                           <img src="{{ asset("assets/img/frl.png") }}" class="w-12 h-12 " alt="">
-                          
-                     </a>
+                    <a href="/"
+                        class="flex justify-start block text-left sm:text-center lg:text-left sm:justify-center lg:justify-start relative flex items-center  font-black leading-none">
+
+                        <img src="{{ asset("assets/img/frl.png") }}" class="w-12 h-12 " alt="">
+
+                    </a>
 
                     <p class="mt-6 mr-4 text-base text-gray-500">Crafting the next-level of user experience and
                         engagement.
@@ -540,34 +568,34 @@
                                 of
                                 Service</a></li>
                     </ul>
-                 
+
                     <div class="flex flex-col w-full text-gray-700">
                         <div class="inline-block px-3 py-2 mt-5 font-bold text-gray-800 uppercase md:mt-0">Follow Us
                         </div>
                         <div class="flex justify-start pl-4 mt-2">
                             <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
-                                target="_blank" rel="noopener noreferrer" href="https://devdojo.com">
-                                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z" />
-                                </svg>
+                                target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/fitarizqilailiyah">
+
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                     <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                               </svg>
+
                             </a>
                             <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
-                                target="_blank" rel="noopener noreferrer" href="https://devdojo.com">
-                                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
+                                target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/frl_furniture/">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
                                 </svg>
+
                             </a>
                             <a class="flex items-center block text-gray-400 no-underline hover:text-gray-600"
-                                target="_blank" rel="noopener noreferrer" href="https://devdojo.com">
-                                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                target="_blank" rel="noopener noreferrer" href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
                                 </svg>
+
                             </a>
                         </div>
                     </div>
@@ -577,7 +605,7 @@
             </div>
 
 
-            <div class="pt-4 pt-6 mt-10 text-center text-gray-500 border-t border-gray-100">© 2020 Landmark. All rights
+            <div class="pt-4 pt-6 mt-10 text-center text-gray-500 border-t border-gray-100">© 2022 FRL Furniture. All rights
                 reserved.</div>
 
         </footer>
