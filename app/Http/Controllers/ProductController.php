@@ -100,7 +100,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-         $categories = DB::table('categories')->get();
+    $categories = DB::table('categories')->get();
         return view('Products.edit', ['categories' => $categories], compact('product'));
     }
     /**
@@ -136,14 +136,14 @@ class ProductController extends Controller
              $imageUrl = url('upload/images/products') . '/' . $fileName;
 
              $val = [
-             'product_id' => $data->id,
+             'product_id' => $product->id,
              'image' => $imageUrl
              ];
 
              array_push($productImages, $val);
              }
         }
-    //    dd($images)
+    //    dd($productImages);
 
         ProductImages::insert($productImages);
 

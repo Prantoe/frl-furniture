@@ -31,7 +31,8 @@
                                 @endif
                                 {{-- <div class="w-full max-w-xs"> --}}
                                 <form action="{{ route('services.update',$service->id) }}"
-                                    method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                    method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
 
                                     @csrf
                                     @method('PUT')

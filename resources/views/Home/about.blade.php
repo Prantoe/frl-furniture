@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css">
+<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/frl.png') }}">
 
         <title>Tentang FRL Furniture</title>
 
@@ -50,7 +51,7 @@
 
                 <nav id="nav" class="absolute top-0 left-0 z-50 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
                       <a href="/" class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Beranda</a>
-                      <a href="{{ asset("about") }}" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang</a>
+                      <a href="{{ asset("about") }}" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang Kami</a>
                       <a href="{{ asset("productsList") }}" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Produk</a>
                       <a href="{{ asset("makeOverList") }}" class="font-bold duration-100 transition-color hover:text-brown">Makeover</a>
 
@@ -119,8 +120,7 @@
                     <p class="my-6 text-xl m-20 lg:text-sm font-medium text-subtitle">FRL Furniture adalah perusahaan yang didirikan pada September 2018 di Jl. Gedongkuning Selatan No 9 B Banguntapan Bantul Yogyakarta, dan mulai menjual dengan sitem online pada tahun 2020. Kebutuhan konsumen yang dicari saat ini adalah kemudahan, kenyamanan, dan keamanan ketika mereka ingin melakukan renovasi dan perbaikan rumah. Oleh karena itu, FRL Furniture menyediakan solusi untuk kebutuhan tersebut. Maka jangan ragu untuk berkonsultasi dengan kami.</p>
 
                   
-                    <a href="https://linktr.ee/frl_furniture" target="_blank" class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
-                          Kami</a>
+                    <a href="https://linktr.ee/frl_furniture" target="_blank" class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Konsultasi dengan kami</a>
 
                     {{-- </div> --}}
 
@@ -134,7 +134,7 @@
 
         </div>
 
-        <footer class="px-4 mt-10 pt-12 pb-8 text-white bg-white border-t border-gray-200">
+        <footer class="px-4 pt-12 pb-8 text-white bg-white border-t border-gray-200">
               <div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
                     <div class="w-full pl-12 mr-4 text-left lg:w-1/4 sm:text-center sm:pl-0 lg:text-left">
 
@@ -144,8 +144,8 @@
 
                           </a>
 
-                          <p class="mt-6 mr-4 text-base text-gray-500">Crafting the next-level of user experience and
-                                engagement.
+                          <p class="mt-6 mr-4 text-base text-gray-500"> Jl Gedongkuning Selatan No 14 B Yogyakarta
+
                           </p>
 
 
@@ -155,36 +155,32 @@
                           <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
                                 <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
                                       Product</li>
-                                <li><a href="#_" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Features</a>
+                                <li><a href="{{ asset("about") }}" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Tentang Kami</a>
                                 </li>
-                                <li><a href="#_" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Integrations</a>
+                                <li><a href="{{ asset("productsList") }}" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Produk</a>
                                 </li>
-                                <li><a href="#_" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Product</a>
+                                <li><a href="{{ asset("makeOverList") }}" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Makeover</a>
                                 </li>
-                                <li><a href="#_" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">FAQ</a>
-                                </li>
+
                           </ul>
                           <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
                                 <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
-                                      Company</li>
-                                <li><a href="#_" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Privacy</a>
+                                      Contact</li>
+                                <li><a href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"> 0819 0460 8678</a>
+
                                 </li>
-                                <li><a href="#_" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Terms
-                                            of
-                                            Service</a></li>
+                                <li><a href="mailto:frlfurniture2022@gmail.com" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"> frlfurniture2022@gmail.com</a>
+
+                                </li>
+
+
                           </ul>
 
                           <div class="flex flex-col w-full text-gray-700">
                                 <div class="inline-block px-3 py-2 mt-5 font-bold text-gray-800 uppercase md:mt-0">Follow Us
                                 </div>
                                 <div class="flex justify-start pl-4 mt-2">
-                                      <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/fitarizqilailiyah">
 
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                                                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                                            </svg>
-
-                                      </a>
                                       <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/frl_furniture/">
 
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
@@ -211,6 +207,7 @@
                     reserved.</div>
 
         </footer>
+
 
         <!-- a little JS for the mobile nav button -->
         <script>

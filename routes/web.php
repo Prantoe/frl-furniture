@@ -13,10 +13,10 @@ use App\Models\Service;
 
 Route::get('/', function () {
     // return view('Home.index');
-     $products = Product::with('product_images')->latest()->paginate(3);
-      $services = Service::with('service_images')->latest()->paginate(2);
-     $makeover = Service::with('service_images')->first();
-     return view('Home.index',compact('products','makeover','services'))
+    $products = Product::with('product_images')->latest()->paginate(3);
+    $services = Service::with('service_images')->latest()->paginate(2);
+    $makeover = Service::with('service_images')->first();
+    return view('Home.index',compact('products','makeover','services'))
      ->with('i', (request()->input('page', 1) - 1) * 5);
 });
 
@@ -26,6 +26,7 @@ Route::middleware('auth')->resource('categorys', CategoryController::class);
 
 Route::resource('home', HomeController::class);
 Route::get('productsList', [HomeController::class, 'productsList']);
+
 Route::get('makeOverList', [HomeController::class, 'makeOverList']);
 Route::get('about', [HomeController::class, 'about']);
 

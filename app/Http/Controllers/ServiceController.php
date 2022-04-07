@@ -91,9 +91,10 @@ class ServiceController extends Controller
      $imageUrl = url('upload/images/services') . '/' . $fileName;
 
      $val = [
-     'service_id' => $data->id,
+     'service_id' => $service->id,
      'image' => $imageUrl
      ];
+    
 
      array_push($serviceImages, $val);
      }

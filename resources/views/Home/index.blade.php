@@ -5,14 +5,14 @@
 
     <head>
         <meta charset="UTF-8">
-
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FRL Furniture Jogja</title>
-
-
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css">
+        <link rel="stylesheet" href="{{ asset('lightbox/css/lightbox.css') }}">
+<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/frl.png') }}">
+
+
         <!-- Small CSS to Hide elements at 1520px size -->
         <style>
             <blade media|(max-width%3A1520px)%20%7B>.left-svg {
@@ -62,17 +62,15 @@
                         <a href="/"
                             class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Beranda</a>
                         <a href="{{ asset("about") }}"
-                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang Kami</a>
+                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang
+                            Kami</a>
                         <a href="{{ asset("productsList") }}"
-
                             class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Produk</a>
                         <a href="{{ asset("makeOverList") }}"
-
                             class="font-bold duration-100 transition-color hover:text-brown">Makeover</a>
                         <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
                             {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
                             <a href="https://linktr.ee/frl_furniture" target="_blank"
-
                                 class="relative inline-block w-full px-5 py-3 text-sm leading-none text-center text-white bg-green-500 fold-bold">Hubungi
                                 Kami
                             </a>
@@ -84,7 +82,6 @@
                         class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between">
 
                         <a href="https://linktr.ee/frl_furniture" target="_blank"
-
                             class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
                             Kami</a>
 
@@ -156,9 +153,6 @@
                             Anda, ubah perspektif orang lain</p>
 
                         <a href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678"
-
-
-
                             class="relative self-startinline-block w-auto px-8 py-2  mb-10 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Beli
                             Sekarang</a>
 
@@ -202,7 +196,8 @@
 
 
                     Kenapa Memilih Kami?</h1>
-                <div class="flex flex-col sm:rounded-lg p-5 pb-10 lg:rounded-lg w-full mt-5 lg:flex-row sm:mt-0 lg:mt-10">
+                <div
+                    class="flex flex-col sm:rounded-lg p-5 pb-10 lg:rounded-lg w-full mt-5 lg:flex-row sm:mt-0 lg:mt-10">
 
 
 
@@ -285,25 +280,10 @@
 
 
 
-                <a href="#"
-                    class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Terbaru</a>
-                <a href="#"
-                    class="text-gray-600 mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Sofa</a>
-                <a href="#"
-                    class="text-gray-600 mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Meja</a>
-                <a href="#"
-                    class="text-gray-600 mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Lemari</a>
-                <a href="#"
-                    class="text-gray-600 mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Kursi</a>
-
-
+                <a href="{{ asset("productsList") }}"
+                    class="lg:ml-5 font-bold text-brown duration-100 md:ml-12 md:mr-3 lg:mr-10 transition-color hover:text-choco">Lihat
+                    Semua Produk</a>
             </nav>
-
-
-
-
-
-            {{-- <div class="w-full  mx-auto"> --}}
 
 
             <div class=" mx-0 p-10 grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
@@ -311,23 +291,39 @@
                 @foreach($products as $key => $value)
 
                     <!--Card 1-->
-                    <div class="swiper-slide  overflow-hidden  h-72 object-cover ">
-                        <div class="bg-white rounded-lg  border-2 p-8 md:mx-4 shadow-md lg:shadow-sm md:mx-4 hover:bg-stone-100">
+                    <div class=" swiper-slide  overflow-hidden  h-full object-cover ">
+                        <div
+                            class="bg-white rounded-lg  border-2 p-8 md:mx-4 shadow-md lg:shadow-sm md:mx-4 hover:bg-stone-100">
 
-                            <a href="" class="">
+                            <a href="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}"
+                                data-lightbox="image{{ $value->id }}" data-title="{{ $value->name }}">
 
-
-                                <img class="mx-auto h-32"
+                                <img class="w-full h-48"
                                     src="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}"
-                                    alt="">
-
-
+                                    alt="product" />
                             </a>
+                            @if(count($value->product_images) > 0)
+
+                                @foreach($value->product_images as $idx => $images)
+                                    @if($idx != 0)
+
+                                        <a href="{{ $images->image }}" data-lightbox="image{{ $value->id }}"
+                                            data-title="My caption">
+
+                                        </a>
+                                    @endif
+
+
+                                @endforeach
+
+                            @endif
+
 
                         </div>
-                        <p class="mt-1 lg:ml-5 text-greyold cursor-pointer">{{ $value->name }}</p>
-                        <h4 class="text-xl lg:ml-5 text-choco font-bold cursor-pointer">{{ $value->description }}</h4>
+         
+                        <h4 class="text-xl lg:ml-5 text-choco font-bold cursor-pointer">{{ $value->name }}</h4>
                         <p class="mt-1 lg:ml-5 text-greyold cursor-pointer">Rp.{{ $value->price }},-</p>
+                        <p class="mt-1 lg:ml-5 text-greyold cursor-pointer">{{ $value->description }}</p>
 
 
                     </div>
@@ -355,10 +351,7 @@
 
                         Makeover Terbaru Kami</h2>
                     <p class="my-6 text-xl lg:text-sm font-medium text-greyold">Kami memiliki lebih dari 300+ proyek
-
-                        yang berhasil
-
-                        dijalankan dan memuaskan harapan pelanggan kami.</p>
+                        yang berhasil dijalankan dan memuaskan harapan pelanggan kami.</p>
                 </div>
                 <div class="container my-12  mx-auto lg:px-4 md:px-12">
 
@@ -368,19 +361,36 @@
                         <div class="my-1 md:mt-5 px-1  md:w-2/5 lg:my-8 lg:px-4 md:px-4 lg:w-2/5">
 
 
-                            <div class="lg:border-l-0 border-0  lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r  flex flex-col justify-between leading-normal">
+                            <div
+                                class="lg:border-l-0 border-0  lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r  flex flex-col justify-between leading-normal">
 
-                                <div class="  ">
-                                    <a href="#">
-                                        <img alt="Placeholder"
-                                            class=" object-cover  h-96 w-96 lg:h-96 lg:w-96  rounded-xl"
-                                            src="{{ count($makeover->service_images) > 0 ? $makeover->service_images[0]->image : null }}">
+                                <div class=" ml-10 ">
 
+                                    <a href="{{ count($makeover->service_images) > 0 ? $makeover->service_images[0]->image : null }}"
+                                        data-lightbox="image{{ $makeover->id }}" data-title="{{ $makeover->name }}">
 
+                                        <img class="object-cover  h-96 w-96 lg:h-96 lg:w-96  rounded-xl"
+                                            src="{{ count($makeover->service_images) > 0 ? $makeover->service_images[0]->image : null }}"
+                                            alt="product" />
 
                                     </a>
+                                     @if(count($makeover->service_images) > 0)
+
+                                         @foreach($makeover->service_images as $idx => $images)
+                                         @if($idx != 0)
+
+                                         <a href="{{ $images->image }}" data-lightbox="image{{ $makeover->id }}" data-title="{{ $makeover->title }}">
+
+                                         </a>
+                                         @endif
+
+
+                                         @endforeach
+
+                                         @endif
+
                                 </div>
-                                <div class=" col-span-2 w-full mt-5">
+                                <div class=" col-span-2 w-full ml-10 mt-5">
 
                                     <h4 class="text-lg text-choco ">{{ $makeover->title }}</h4>
 
@@ -396,33 +406,49 @@
 
                         </div>
                         <!-- END Column -->
-                        <div class="lg:mt-0 columns-1 lg:pl-5 md:w-3/5 lg:w-3/5">
+                        <div class="lg:mt-0 ml-10 lg:ml-0 lg:columns-1 lg:pl-5 md:w-3/5 lg:w-3/5">
 
 
- @foreach($services as $key => $value)
+                            @foreach($services as $key => $value)
 
-                            <div class="lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
+                                <div
+                                    class=" lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
 
 
-                                <div class="row-span-2   ">
-                                    <a href="#">
-                                        <img alt="Placeholder"
-                                            class="object-cover w-24 h-24 md:w-48 md:h-48 lg:h-48 lg:w-48 rounded-lg"
-                                            src="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}">
+                                    <div class="row-span-2   ">
+                                       
 
-                                    </a>
+                                        <a href="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->name }}">
+
+                                              <img class="object-cover w-24 h-24 md:w-48 md:h-48 lg:h-48 lg:w-48 rounded-lg" src="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}" alt="product" />
+                                        </a>
+
+                                         @if(count($value->service_images) > 0)
+
+                                         @foreach($value->service_images as $idx => $images)
+                                         @if($idx != 0)
+
+                                         <a href="{{ $images->image }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->title }}">
+
+                                         </a>
+                                         @endif
+
+
+                                         @endforeach
+
+                                         @endif
+
+
+                                        
+                                    </div>
+                                    <div class="row-span-2 col-span-2 w-full ml-5">
+
+                                        <h4 class="text-lg text-choco ">{{ $value->title }}</h4>
+                                        <p class="mt-2 text-sm text-greyold">{{ $value->description }}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="row-span-2 col-span-2 w-full ml-5">
-
-                                    <h4 class="text-lg text-choco ">{{ $value->title }}</h4>
-                                    <p class="mt-2 text-sm text-greyold">In publishing and graphic design, Lorem ipsum
-                                        is a
-                                        placeholder text commonly used to demonstrate the visual form of a document
-                                        or a typeface
-                                    </p>
-                                </div>
-                            </div>
-@endforeach
+                            @endforeach
 
                             {{-- <div
                                 class="lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
@@ -455,44 +481,34 @@
 
         <!-- End makeover-->
 
-        <div id="maps"
-            class="flex items-center  justify-center lg:w-full w-full 2xl:w-full 2xl:h-full  md:py-0 xl:px-0">
+       <div class=" max-w-full sm:w-max-w-full rounded overflow-hidden shadow-lg">
+<div class="mapouter">
+      <div class="gmap_canvas"><iframe class="lg:w-full w-full sm:w-full lg:h-96" id="gmap_canvas" src="https://maps.google.com/maps?q=7%C2%B049'02.0%22S%20110%C2%B024'07.8%22E&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a>
 
-            {{-- <div class="w-full mx-auto"> --}}
-            <div class="mapouter">
-                <div class="gmap_canvas"><iframe width="1024" height="600" id="gmap_canvas"
-                        src="https://maps.google.com/maps?q=Jl.%20Gedongkuning%20No.60,%20Pelem%20Mulong,%20Rejowinangun,%20Kec.%20Kotagede,%20Kota%20Yogyakarta,%20Daerah%20Istimewa%20Yogyakarta%2055171&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                        href="https://123movies-to.org"></a><br>
-                    <style>
-                        .mapouter {
-                            position: relative;
-                            text-align: right;
-                            height: 600px;
-                            width: 1024px;
-                        }
+            <style>
+                  .mapouter {
+                        position: relative;
+                        text-align: right;
+                       
+                  }
 
-                    </style><a href="https://www.embedgooglemap.net">google maps in website</a>
-                    <style>
-                        .gmap_canvas {
-                            overflow: hidden;
-                            background: none !important;
-                            height: 600px;
-                            width: 1024px;
-                        }
+            </style><a href="https://www.embedgooglemap.net"></a>
+            <style>
+                  .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        
+                  }
 
-                    </style>
-                </div>
-            </div>
+            </style>
+      </div>
+</div>
 
 
-
-            {{-- </div> --}}
-
-        </div>
+</div>
 
         <div id="socialMedia"
-            class="flex items-center bg-backgroundHeader p-10 justify-center w-full 2xl:w-full 2xl:h-full  md:py-16 lg:py-24 sm:py-20 xl:px-0">
+            class="flex items-center mt-10 bg-backgroundHeader p-10 justify-center w-full 2xl:w-full 2xl:h-full  md:py-16 lg:py-24 sm:py-20 xl:px-0">
 
 
             <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl  mx-auto text-center">
@@ -500,13 +516,14 @@
                 <h2
                     class="text-2xl font-bold leading-10 tracking-tight text-choco sm:text-3xl sm:leading-none md:text-3xl lg:text-3xl xl:text-3xl">
                     Ingin Tahu Lebih Detail?</h2>
-                <p class="my-6 text-xl lg:text-sm font-medium text-subtitle">FRL Furniture menawarkan berbagai macam furniture berbahan dasar kayu jati belanda, jati, dan mahoni dengan konsep minimalis, kontemporer, maupun modern dengan kualitas terbaik dan harga terjangkau.</p>
+                <p class="my-6 text-xl lg:text-sm font-medium text-subtitle">FRL Furniture menawarkan berbagai macam
+                    furniture berbahan dasar kayu jati belanda, jati, dan mahoni dengan konsep minimalis, kontemporer,
+                    maupun modern dengan kualitas terbaik dan harga terjangkau.</p>
 
 
                 {{-- <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden"> --}}
                 {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
                 <a href="https://linktr.ee/frl_furniture" target="_blank"
-
                     class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
                     Kami</a>
 
@@ -543,48 +560,58 @@
                         <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
                             Product</li>
                         <li><a href="{{ asset("about") }}"
-
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Tentang Kami</a>
+                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Tentang
+                                Kami</a>
                         </li>
                         <li><a href="{{ asset("productsList") }}"
-
                                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Produk</a>
                         </li>
                         <li><a href="{{ asset("makeOverList") }}"
-
                                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Makeover</a>
                         </li>
-                      
+
                     </ul>
                     <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
                         <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
                             Contact</li>
                         <li><a href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678"
-
-                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"> 0819 0460 8678</a>
+                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"> 0819 0460
+                                8678</a>
 
                         </li>
-                       
+
+                        <li><a href="mailto:frlfurniture2022@gmail.com"
+                                class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">
+                                frlfurniture2022@gmail.com</a>
+
+                        </li>
+
                     </ul>
 
                     <div class="flex flex-col w-full text-gray-700">
                         <div class="inline-block px-3 py-2 mt-5 font-bold text-gray-800 uppercase md:mt-0">Follow Us
                         </div>
                         <div class="flex justify-start pl-4 mt-2">
-                            
-                            <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
-                                target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/frl_furniture/">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
+                                target="_blank" rel="noopener noreferrer"
+                                href="https://www.instagram.com/frl_furniture/">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-instagram" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
                                 </svg>
 
                             </a>
                             <a class="flex items-center block text-gray-400 no-underline hover:text-gray-600"
-                                target="_blank" rel="noopener noreferrer" href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678">
+                                target="_blank" rel="noopener noreferrer"
+                                href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                    <path
+                                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
                                 </svg>
 
                             </a>
@@ -596,7 +623,8 @@
             </div>
 
 
-            <div class="pt-4 pt-6 mt-10 text-center text-gray-500 border-t border-gray-100">© 2022 FRL Furniture. All rights
+            <div class="pt-4 pt-6 mt-10 text-center text-gray-500 border-t border-gray-100">© 2022 FRL Furniture. All
+                rights
                 reserved.</div>
 
         </footer>
@@ -616,5 +644,9 @@
             }
 
         </script>
+        <script src="{{ asset('lightbox/js/lightbox-plus-jquery.js') }}"></script>
+        <script src="{{ asset('lightbox/js/lightbox.js') }}"></script>
+
     </body>
+
 </html>
