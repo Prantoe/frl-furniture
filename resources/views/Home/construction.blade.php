@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="{{ asset('lightbox/css/lightbox.css') }}">
 <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/frl.png') }}">
 
-        <title>Make Over FRL Furniture</title>
+        <title>Produk Konstruksi FRL Furniture</title>
 
          <style>
                <blade media|(max-width%3A1520px)%20%7B>.left-svg {
@@ -31,6 +31,7 @@
                      margin-top: 0px;
                      background: #a0aec0;
                }
+
                 /* Add a red background color to navbar links on hover */
                 .navbar a:hover, .dropdown:hover .dropbtn {
 
@@ -135,25 +136,27 @@
 
           <h1 class="max-w-2xl px-5 md:pb-10 lg:pb-0 text-choco text-3xl text-center font-black leading-tight sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
 
-                Make Over Kami</h1>
+                Produk Konstruksi</h1>
     </div>
  
 
 
         <div class="container mx-auto grid grid-cols-2 p-5 gap-4 space-y-2 mt-10 lg:space-x-0 lg:space-y-2 lg:gap-4 lg:grid lg:grid-cols-4">
 
-            @foreach($services as $key => $value)
+            @foreach($constructions as $key => $value)
 
-            <div class="max-w-xs cursor-pointer  mb-5 bg-white  rounded-lg hover:shadow-2xl">
+
+            <div class="max-w-xs border-2 cursor-pointer  mb-5 bg-white  rounded-lg hover:shadow-2xl">
+
               
-                    <a href="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->title }}">
+                    <a href="{{ count($value->construction_images) > 0 ? $value->construction_images[0]->image : null }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->title }}">
 
-                          <img class="w-full h-48" src="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}" alt="product" />
+                          <img class="w-full h-48" src="{{ count($value->construction_images) > 0 ? $value->construction_images[0]->image : null }}" alt="product" />
                     </a>
 
-                    @if(count($value->service_images) > 0)
+                    @if(count($value->construction_images) > 0)
 
-                    @foreach($value->service_images as $idx => $images)
+                    @foreach($value->construction_images as $idx => $images)
                     @if($idx != 0)
 
                     <a href="{{ $images->image }}" data-lightbox="image{{ $value->id }}" data-title="My caption">

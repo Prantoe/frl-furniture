@@ -23,7 +23,7 @@
         <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">apps</p>
         <a href="./../../categorys"
             class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-            <i class="fad fa-chart-pie text-xs mr-2"></i>
+            <i class="fad fa-solid fa-list text-xs mr-2"></i>
             Category Products
         </a>
 
@@ -31,17 +31,24 @@
         <a href="./../../products"
             class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
             <i class="fad fa-envelope-open-text text-xs mr-2"></i>
-            Product
+            Interior
         </a>
         <!-- end link -->
 
         <!-- link -->
         <a href="./../../services"
             class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-            <i class="fad fa-chart-pie text-xs mr-2"></i>
+            <i class="fad fa-building text-xs mr-2"></i>
             Make Over
         </a>
+        
         <!-- end link -->
+        <a href="./../../constructions" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+              <i class="fad fa-solid fa-toolbox text-xs mr-2"></i>
+
+                Constuction
+        </a>
+
     </div>
     <!-- end sidebar content -->
 

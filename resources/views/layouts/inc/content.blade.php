@@ -75,7 +75,7 @@
                      <div class="mt-8">
                          <h1 class="h5">{{ $dataProducts }}</h1>
 
-                         <p>Total Products</p>
+                         <p>Total Product Interior</p>
                      </div>
                      <!-- end bottom -->
 
@@ -100,8 +100,9 @@
 
                      <!-- bottom -->
                      <div class="mt-8">
-                         <h1 class="h5 ">{{ $users }}</h1>
-                         <p>Administrator</p>
+                         <h1 class="h5 ">{{ $dataConstruct }}</h1>
+
+                         <p>Total Product Constructions</p>
                      </div>
                      <!-- end bottom -->
 

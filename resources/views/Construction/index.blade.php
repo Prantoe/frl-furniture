@@ -23,17 +23,17 @@
                         <div class="overflow-x-auto sm:-mx-6 lg:-mx-12 bg-white bg-black rounded-lg">
 
                             <div class="flex flex-row justify-between items-center p-5">
-                                <h1 class="font-extrabold text-lg">Make Over</h1>
+                                <h1 class="font-extrabold text-lg">Product Contruction</h1>
 
                             </div>
 
 
                             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                                <a href="{{ route('services.create') }}"
+                                <a href="{{ route('constructions.create') }}"
                                     class="btn-info text-gray-800 hover:bg-yellow-500 hover:text-white inline-flex mx-8">Add
 
 
-                                    Make Over</a>
+                                    Product Construction</a>
                                 {{-- <div class="overflow-hidden p-auto bg-white border-0 rounded-lg"> --}}
                                 <table
                                     class="bg-white table-auto text-left my-10 border-collapse rounded-lg border border-slate-400 w-5/6 m-auto">
@@ -59,7 +59,8 @@
 
                                     </thead>
                                     <tbody>
-                                        @foreach($services as $key => $value)
+                                        @foreach($constructions as $key => $value)
+
 
 
                                             <tr class="hover:bg-gray-100">
@@ -71,7 +72,7 @@
                                                 <td class="border py-2 text-gray-600">
                                                 
                                                     <img class=" m-auto content-center  w-20 h-auto"
-                                                        src="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}">
+                                                        src="{{ count($value->construction_images) > 0 ? $value->construction_images[0]->image : null }}">
 
                                                 </td>
                                                 <td
@@ -82,15 +83,18 @@
                                                <td class="border border-slate-300 py-4 text-xs text-gray-600 text-center">
                                                      {{ $value->description }}</td>
 
-                                               <td
-                                                    class="border border-slate-300 py-4 text-xs text-gray-600 text-center">
+                                               
+
+
+
+                                                <td class="border border-slate-300 py-4 text-xs text-gray-600 text-center">
                                                     <form
-                                                        action="{{ route('services.destroy',$value->id) }}"
+                                                        action="{{ route('constructions.destroy',$value->id) }}"
                                                         method="POST">
 
 
                                                         <a class="bg-blue-600 btn btn-sm hover:bg-blue-700 text-white font-bold  px-15 rounded inline-flex items-center"
-                                                            href="{{ route('services.edit',$value->id) }}">Edit</a>
+                                                            href="{{ route('constructions.edit',$value->id) }}">Edit</a>
 
                                                         @csrf
                                                         @method('DELETE')
@@ -101,7 +105,7 @@
                                                 </td>
 
                                             </tr>
-                                        @endforeach
+                                        @endforeach 
                                     </tbody>
                                 </table>
                             </div>

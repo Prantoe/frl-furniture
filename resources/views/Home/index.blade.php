@@ -10,7 +10,11 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css">
         <link rel="stylesheet" href="{{ asset('lightbox/css/lightbox.css') }}">
-<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/frl.png') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/frl.png') }}">
+
+        <link rel="stylesheet" href="{{ asset('css/swiper-bundle.css') }}" />
+
+
 
 
         <!-- Small CSS to Hide elements at 1520px size -->
@@ -33,6 +37,44 @@
                 margin-top: 0px;
                 background: #a0aec0;
             }
+           
+            /* Links inside the navbar */
+           
+
+            /* Add a red background color to navbar links on hover */
+            .navbar a:hover, .dropdown:hover .dropbtn {
+          
+            }
+
+            /* Dropdown content (hidden by default) */
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            }
+
+            /* Links inside the dropdown */
+            .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            }
+
+            /* Add a grey background color to dropdown links on hover */
+            .dropdown-content a:hover {
+            background-color: #ddd;
+            }
+
+            /* Show the dropdown menu on hover */
+            .dropdown:hover .dropdown-content {
+            display: block;
+            }
 
         </style>
 
@@ -42,7 +84,7 @@
 
     <body class="overflow-x-hidden antialiased ">
 
-        <div class=" bg-backgroundHeader ">
+        <div class=" bg-white ">
 
 
 
@@ -65,9 +107,25 @@
                             class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang
                             Kami</a>
                         <a href="{{ asset("productsList") }}"
-                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Produk</a>
+                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown"></a>
+                            
+                        <div class="dropdown">
+                              <button class="dropbtn mr-0 font-bold duration-100 md:mr-3 lg:mr-8 lg:-ml-8 transition-color hover:text-brown">Produk
+
+                              </button>
+                              
+                              <div class="dropdown-content">
+                                    <a href="{{ asset("productsList") }}">Produk Interior</a>
+
+                                    <a href="{{ asset("constructionList") }}">Produk Konstruksi</a>
+
+                              </div>
+                        </div>
+
                         <a href="{{ asset("makeOverList") }}"
                             class="font-bold duration-100 transition-color hover:text-brown">Makeover</a>
+
+                            
                         <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
                             {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
                             <a href="https://linktr.ee/frl_furniture" target="_blank"
@@ -85,45 +143,7 @@
                             class="relative z-40 py-2 px-6 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Hubungi
                             Kami</a>
 
-                        <svg class="absolute top-0 left-0 hidden w-screen max-w-3xl -mt-64 -ml-12 lg:block"
-                            viewBox="0 0 818 815" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <defs>
-                                <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="c">
-                                    <stop stop-color="#E614F2" offset="0%" />
-                                    <stop stop-color="#FC3832" offset="100%" />
-                                </linearGradient>
-                                <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="f">
-                                    <stop stop-color="#657DE9" offset="0%" />
-                                    <stop stop-color="#1C0FD7" offset="100%" />
-                                </linearGradient>
-                                <filter x="-4.7%" y="-3.3%" width="109.3%" height="109.3%"
-                                    filterUnits="objectBoundingBox" id="a">
-                                    <feOffset dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
-                                    <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1"
-                                        result="shadowBlurOuter1" />
-                                    <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
-                                        in="shadowBlurOuter1" />
-                                </filter>
-                                <filter x="-4.7%" y="-3.3%" width="109.3%" height="109.3%"
-                                    filterUnits="objectBoundingBox" id="d">
-                                    <feOffset dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
-                                    <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1"
-                                        result="shadowBlurOuter1" />
-                                    <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"
-                                        in="shadowBlurOuter1" />
-                                </filter>
-                                <path
-                                    d="M160.52 108.243h497.445c17.83 0 24.296 1.856 30.814 5.342 6.519 3.486 11.635 8.602 15.12 15.12 3.487 6.52 5.344 12.985 5.344 30.815v497.445c0 17.83-1.857 24.296-5.343 30.814-3.486 6.519-8.602 11.635-15.12 15.12-6.52 3.487-12.985 5.344-30.815 5.344H160.52c-17.83 0-24.296-1.857-30.814-5.343-6.519-3.486-11.635-8.602-15.12-15.12-3.487-6.52-5.343-12.985-5.343-30.815V159.52c0-17.83 1.856-24.296 5.342-30.814 3.486-6.519 8.602-11.635 15.12-15.12 6.52-3.487 12.985-5.343 30.815-5.343z"
-                                    id="b" />
-                                <path
-                                    d="M159.107 107.829H656.55c17.83 0 24.296 1.856 30.815 5.342 6.518 3.487 11.634 8.602 15.12 15.12 3.486 6.52 5.343 12.985 5.343 30.816V656.55c0 17.83-1.857 24.296-5.343 30.815-3.486 6.518-8.602 11.634-15.12 15.12-6.519 3.486-12.985 5.343-30.815 5.343H159.107c-17.83 0-24.297-1.857-30.815-5.343-6.519-3.486-11.634-8.602-15.12-15.12-3.487-6.519-5.343-12.985-5.343-30.815V159.107c0-17.83 1.856-24.297 5.342-30.815 3.487-6.519 8.602-11.634 15.12-15.12 6.52-3.487 12.985-5.343 30.816-5.343z"
-                                    id="e" />
-                            </defs>
-                            <g fill="none" fill-rule="evenodd" opacity=".9">
 
-                            </g>
-                        </svg>
                     </div>
 
                     <div id="nav-mobile-btn"
@@ -138,133 +158,174 @@
             <!-- End Header Section-->
 
             <!-- BEGIN HERO SECTION -->
-            <div
-                class="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64">
-                <div
-                    class="container group flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
-                    <div
-                        class="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">
-                        <h1 class="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-3xl xl:mb-8">
-                            Sebuah kreasi yang sesuai dengan kepribadian
-                            anda</h1>
-
-                        <p class="pr-0 mb-8 text-base text-subtitle sm:text-lg xl:text-xl lg:pr-20">Ubah tampilan rumah
-
-                            Anda, ubah perspektif orang lain</p>
-
-                        <a href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678"
-                            class="relative self-startinline-block w-auto px-8 py-2  mb-10 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Beli
-                            Sekarang</a>
-
-
-                        <!-- Integrates with section -->
-                        <div class="flex-col hidden mt-12 sm:flex lg:mt-24">
-
-
-                        </div>
-
-                    </div>
-                    <div class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 lg:mr-10">
-                        <div
-                            class="relative group  container relative  w-full max-w-2xl lg:absolute xl:max-w-6xl lg:w-screen">
-
-                            <img src="{{ asset('assets/img/background/bg1.png') }}"
-                                class="w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12">
+            <div class="relative items-center justify-center w-full overflow-x-hidden lg:pt-0 lg:pb-0 xl:pt-0 xl:pb-0">
+                <!-- Slider main container -->
+                <div class="swiper ">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide lg:w-full lg:swiper-slide">
                             <div
-                                class="opacity-0 group-hover:opacity-100 duration-500 absolute inset-x-0 bottom-1 flex justify-center items-end">
-                                <img src="{{ asset('assets/img/background/bg2.png') }}"
-                                    class="w-12 lg:w-24 h-auto  mb-24 ml-80  xl:mt-40 lg:mb-12 lg:h-full lg:-mr-52">
+                                class="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64">
+                                <div
+                                    class="container group flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
+                                    <div
+                                        class=" flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">
+                                        <h1
+                                            class="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-3xl xl:mb-8">
+                                            Sebuah kreasi yang sesuai dengan kepribadian
+                                            anda</h1>
+
+                                        <p class="pr-0 mb-8 text-base text-subtitle sm:text-lg xl:text-xl lg:pr-20">Ubah
+                                            tampilan rumah
+
+                                            Anda, ubah perspektif orang lain</p>
+
+                                        <a href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678"
+                                            class="relative self-startinline-block w-auto px-8 py-2  mb-10 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Beli
+                                            Sekarang</a>
 
 
+                                        <!-- Integrates with section -->
+                                        <div class="flex-col hidden mt-12 sm:flex lg:mt-24">
+
+
+                                        </div>
+
+                                    </div>
+                                    <div
+                                        class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 lg:mr-10">
+                                        <div
+                                            class="relative group  container relative  w-full max-w-2xl lg:absolute xl:max-w-6xl lg:w-screen">
+
+                                            <img src="{{ asset('assets/img/background/bg1.png') }}"
+                                                class="w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12">
+                                            <div
+                                                class="opacity-0 group-hover:opacity-100 duration-500 absolute inset-x-0 bottom-1 flex justify-center items-end">
+                                                <img src="{{ asset('assets/img/background/bg2.png') }}"
+                                                    class="w-12 lg:w-24 h-auto  mb-24 ml-80  xl:mt-40 lg:mb-12 lg:h-full lg:-mr-52">
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
+                        <div class="swiper-slide lg:w-full lg:swiper-slide">
+                            <div
+                                class="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64">
+                                <div
+                                    class="container group flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
+                                    <div
+                                        class=" flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">
+                                        <h1
+                                            class="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-3xl xl:mb-8">
+                                            TV Cabinet <br>4 Drawers <br>2 Open Space</h1>
+
+                                        <p class="pr-0 mb-8 text-base text-subtitle sm:text-lg xl:text-xl lg:pr-20">
+                                            Terbuat dari kayu jati kualitas terbaik. <br><br></p>
+
+
+                                        <a href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678"
+                                            class="relative self-startinline-block w-auto px-8 py-2  mb-10 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Beli
+                                            Sekarang</a>
+
+
+                                        <!-- Integrates with section -->
+                                        <div class="flex-col hidden mt-12 sm:flex lg:mt-24">
+
+
+                                        </div>
+
+                                    </div>
+                                    <div
+                                        class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 lg:mr-10">
+                                        <div
+                                            class="relative group  container relative  w-full max-w-2xl lg:absolute xl:max-w-6xl lg:w-screen">
+
+                                            <img src="{{ asset('assets/img/background/bg7.png') }}"
+                                                class="w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12">
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide lg:w-full lg:swiper-slide">
+                            <div
+                                class="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64">
+                                <div
+                                    class="container group flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
+                                    <div
+                                        class=" flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">
+                                        <h1
+                                            class="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-3xl xl:mb-8">
+                                            TV CABINET</h1>
+
+                                        <p class="pr-0 mb-8 text-base text-subtitle sm:text-lg xl:text-xl lg:pr-20">Solusi agar Televisi terlihat elegan dan indah</p>
+
+                                        <a href="whatsapp://send?text=Hallo FRL Furniture!&phone=+6281904608678"
+                                            class="relative self-startinline-block w-auto px-8 py-2  mb-10 text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">Beli
+                                            Sekarang</a>
+
+
+                                        <!-- Integrates with section -->
+                                        <div class="flex-col hidden mt-12 sm:flex lg:mt-24">
+
+
+                                        </div>
+
+                                    </div>
+                                    <div
+                                        class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 lg:mr-10">
+                                        <div
+                                            class="relative group  container relative  w-full max-w-2xl lg:absolute xl:max-w-6xl lg:w-screen">
+
+                                            <img src="{{ asset('assets/img/background/bgbg.png') }}"
+
+
+
+
+                                                class="w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        ...
                     </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+                    {{-- <div class="swiper-scrollbar"></div> --}}
                 </div>
+
             </div>
+
             <!-- HERO SECTION END -->
         </div>
 
-        <!-- BEGIN FEATURES SECTION -->
-        <div id="features" class="relative w-full px-8 pt-10  md:py-0 lg:py-24 xl:py-40 xl:px-0">
-
-            <div class="container flex flex-col items-center justify-between h-full max-w-6xl mx-auto">
-
-                {{-- <h2 class="my-5 text-base font-medium tracking-tight text-indigo-500 uppercase">Our Features</h2> --}}
-                <h1
-                    class="max-w-2xl px-5 md:mt-4 mt-2 text-choco text-3xl text-center font-black leading-tight  sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
-
-
-                    Kenapa Memilih Kami?</h1>
-                <div
-                    class="flex flex-col sm:rounded-lg p-5 pb-10 lg:rounded-lg w-full mt-5 lg:flex-row sm:mt-0 lg:mt-10">
-
-
-
-                    <div class="flex flex-col md:flex-row text-center md:-mx-4">
-                        <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100 ">
-
-
-                            <img class="mx-auto mb-6 w-20 h-20"
-                                src="{{ asset("assets/img/accounting.png") }}" alt="">
-
-
-                            <h4 class="text-xl text-brown font-bold">Profesional </h4>
-
-                            <p class="mt-1 text-subtitle">Tenaga ahli di bidang makeover</p>
-
-                        </div>
-
-                        <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
-                            <img class="mx-auto mb-6 w-20 h-20"
-                                src="{{ asset("assets/img/user-experience.png") }}" alt="">
-
-
-
-                            <h4 class="text-xl text-brown font-bold">Berpengalaman</h4>
-
-                            <p class="mt-1 text-subtitle">Telah mengerjakan ratusan proyek</p>
-
-
-                        </div>
-
-                        <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
-                            <img class="mx-auto mb-6 w-20 h-20"
-                                src="{{ asset("assets/img/quality.png") }}" alt="">
-
-
-                            <h4 class="text-xl text-brown font-bold">Kualitas </h4>
-
-                            <p class="mt-1 text-subtitle">Menggunakan material terbaik</p>
-
-                        </div>
-
-                        <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
-                            <img class="mx-auto mb-6 w-20 h-20"
-                                src="{{ asset("assets/img/furniture.png") }}" alt="">
-
-
-
-                            <h4 class="text-xl text-brown font-bold">Banyak Pilihan</h4>
-
-                            <p class="mt-1 text-subtitle">Tersedia berbagai macam produk</p>
-
-
-                        </div>
-
-                    </div>
-
-
-
-
-                </div>
-            </div>
-        </div>
-        <!-- END FEATURES SECTION -->
+        
 
 
         <!-- product Section -->
-        <div class="relative px-8 py-10 bg-white border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
+        <div class="relative px-8 py-10 bg-white border-t border-gray-200 md:py-16 lg:py-24     xl:py-40 xl:px-0">
 
 
             <div id="product" class="container flex flex-col items-center h-full max-w-6xl mx-auto">
@@ -275,69 +336,51 @@
                     Produk Terbaru Kami</h1>
             </div>
 
-            <nav id="product"
-                class="absolute flex flex-col  hidden  mt-24 text-greyold-100 bg-white border-t border-gray-200 md:w-auto md:flex-row  lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
-
-
-
-                <a href="{{ asset("productsList") }}"
-                    class="lg:ml-5 font-bold text-brown duration-100 md:ml-12 md:mr-3 lg:mr-10 transition-color hover:text-choco">Lihat
-                    Semua Produk</a>
-            </nav>
-
-
-            <div class=" mx-0 p-10 grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            <div class=" mx-0 grid  grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6">
 
                 @foreach($products as $key => $value)
 
-                    <!--Card 1-->
-                    <div class=" swiper-slide  overflow-hidden  h-full object-cover ">
-                        <div
-                            class="bg-white rounded-lg  border-2 p-8 md:mx-4 shadow-md lg:shadow-sm md:mx-4 hover:bg-stone-100">
+                <!--Card 1-->
+                <div class="lg:w-full w-20 mt-10  overflow-hidden  h-full object-contain ">
+                      <div class="bg-white rounded-lg  border-2 p-0 md:mx-4 shadow-md lg:shadow-sm md:mx-4 hover:bg-stone-100">
 
-                            <a href="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}"
-                                data-lightbox="image{{ $value->id }}" data-title="{{ $value->name }}">
+                            <a href="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->name }}">
 
-                                <img class="w-full h-48"
-                                    src="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}"
-                                    alt="product" />
+                                  <img class="w-full object-contain  md:h-28 lg:h-48" src="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}" alt="product" />
+
                             </a>
                             @if(count($value->product_images) > 0)
 
-                                @foreach($value->product_images as $idx => $images)
-                                    @if($idx != 0)
+                            @foreach($value->product_images as $idx => $images)
+                            @if($idx != 0)
 
-                                        <a href="{{ $images->image }}" data-lightbox="image{{ $value->id }}"
-                                            data-title="My caption">
+                            <a href="{{ $images->image }}" data-lightbox="image{{ $value->id }}" data-title="Rp.{{ $value->price }}">
 
-                                        </a>
-                                    @endif
-
-
-                                @endforeach
-
+                            </a>
                             @endif
 
 
-                        </div>
-         
-                        <h4 class="text-xl lg:ml-5 text-choco font-bold cursor-pointer">{{ $value->name }}</h4>
-                        <p class="mt-1 lg:ml-5 text-greyold cursor-pointer">Rp.{{ $value->price }},-</p>
-                        <p class="mt-1 lg:ml-5 text-greyold cursor-pointer">{{ $value->description }}</p>
+                            @endforeach
 
+                            @endif
+
+                    <a href="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}" data-lightbox="image{{ $value->id }}" target="_blank" class="relative text-[8px] lg:text-sm py-1 my-2 mx-2 px-0 block text-center content-center text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">{{ $value->name }}
+
+                    </a>
 
                     </div>
+
+                </div>
                 @endforeach
 
+
             </div>
+ 
+            <a href="{{ asset("productsList") }}" target="_blank" class="relative mt-10  py-1 my-2 mx-2 px-0 block text-center  text-grey font-semibold hover:text-choco transition duration-300 bg-brown100 text-white rounded-full">Lihat Semua Produk
 
-
-
-
+            </a>
         </div>
         <!-- End swipper Section -->
-
-
 
         <!-- Start makeover -->
         <div id="makeover"
@@ -349,166 +392,248 @@
                     <h2
                         class="text-2xl font-bold leading-10 tracking-tight text-choco sm:text-3xl sm:leading-none md:text-3xl lg:text-3xl xl:text-3xl">
 
-                        Makeover Terbaru Kami</h2>
+                        Proyek Makeover</h2>
                     <p class="my-6 text-xl lg:text-sm font-medium text-greyold">Kami memiliki lebih dari 300+ proyek
                         yang berhasil dijalankan dan memuaskan harapan pelanggan kami.</p>
                 </div>
                 <div class="container my-12  mx-auto lg:px-4 md:px-12">
-
-                    <div class="flex flex-wrap mx-1 lg:mx-12 ">
-
-                        <!-- Column -->
-                        <div class="my-1 md:mt-5 px-1  md:w-2/5 lg:my-8 lg:px-4 md:px-4 lg:w-2/5">
+<div class="flex flex-row">
+      @foreach($services as $key => $value)
+      <div class="basis-1/2 relative">
 
 
-                            <div
-                                class="lg:border-l-0 border-0  lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r  flex flex-col justify-between leading-normal">
-
-                                <div class=" ml-10 ">
-
-                                    <a href="{{ count($makeover->service_images) > 0 ? $makeover->service_images[0]->image : null }}"
-                                        data-lightbox="image{{ $makeover->id }}" data-title="{{ $makeover->name }}">
-
-                                        <img class="object-cover  h-96 w-96 lg:h-96 lg:w-96  rounded-xl"
-                                            src="{{ count($makeover->service_images) > 0 ? $makeover->service_images[0]->image : null }}"
-                                            alt="product" />
-
-                                    </a>
-                                     @if(count($makeover->service_images) > 0)
-
-                                         @foreach($makeover->service_images as $idx => $images)
-                                         @if($idx != 0)
-
-                                         <a href="{{ $images->image }}" data-lightbox="image{{ $makeover->id }}" data-title="{{ $makeover->title }}">
-
-                                         </a>
-                                         @endif
+      <a href="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->description }}">
 
 
-                                         @endforeach
-
-                                         @endif
-
-                                </div>
-                                <div class=" col-span-2 w-full ml-10 mt-5">
-
-                                    <h4 class="text-lg text-choco ">{{ $makeover->title }}</h4>
+            <img class=" object-cover  w-full h-full p-5 md:w-full md:h-full lg:h-full lg:w-full rounded-lg" src="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}" alt="service" />
+            <div class="z-20 absolute w-full lg:ml-0 lg:bottom-80 inset-x-2 uppercase font-bold lg:drop-shadow-lg lg:shadow-black lg:text-white  text-brown text-sm md:text-xl lg:text-3xl text-center md:max-w-md lg:max-w-md leading-4">{{ $value->title }}<br><br> {{ $value->description }}</div>
 
 
-                                    <p class="mt-2 text-sm text-greyold">{{ $makeover->description }}
-                                    </p>
+      </a>
 
-                                </div>
+            {{-- <h4 class="text-lg text-choco absolute pb-20">{{ $value->title }}</h4> --}}
+            {{-- <p class="mt-2 text-sm text-greyold">{{ $value->description }}
+            </p> --}}
+    
 
-                            </div>
+        {{-- @if(count($value->service_images) > 0)
 
-                            <!-- END Article -->
+        @foreach($value->service_images as $idx => $images)
+        @if($idx != 0)
 
-                        </div>
-                        <!-- END Column -->
-                        <div class="lg:mt-0 ml-10 lg:ml-0 lg:columns-1 lg:pl-5 md:w-3/5 lg:w-3/5">
+        <a href="{{ $images->image }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->title }}">
 
-
-                            @foreach($services as $key => $value)
-
-                                <div
-                                    class=" lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
+        </a>
+        @endif
 
 
-                                    <div class="row-span-2   ">
-                                       
+        @endforeach
 
-                                        <a href="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->name }}">
-
-                                              <img class="object-cover w-24 h-24 md:w-48 md:h-48 lg:h-48 lg:w-48 rounded-lg" src="{{ count($value->service_images) > 0 ? $value->service_images[0]->image : null }}" alt="product" />
-                                        </a>
-
-                                         @if(count($value->service_images) > 0)
-
-                                         @foreach($value->service_images as $idx => $images)
-                                         @if($idx != 0)
-
-                                         <a href="{{ $images->image }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->title }}">
-
-                                         </a>
-                                         @endif
+        @endif --}}
 
 
-                                         @endforeach
+        </div>
+    @endforeach
+        
+    </div>
 
-                                         @endif
-
-
-                                        
-                                    </div>
-                                    <div class="row-span-2 col-span-2 w-full ml-5">
-
-                                        <h4 class="text-lg text-choco ">{{ $value->title }}</h4>
-                                        <p class="mt-2 text-sm text-greyold">{{ $value->description }}
-                                        </p>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                            {{-- <div
-                                class="lg:grid lg:w-full lg:py-5 lg:h-56 lg:grid-rows-2 lg:grid-flow-col mt-4 lg:border-l-0 lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r flex lg:flex-col leading-normal">
-
-
-                                <div class="row-span-2   ">
-                                    <a href="#">
-                                        <img alt="Placeholder"
-                                            class="object-cover w-24 h-24 md:w-48 md:h-48 lg:h-48 lg:w-48 rounded-lg"
-                                            src="https://picsum.photos/600/400/?random">
-                                    </a>
-                                </div>
-                                <div class="row-span-2 col-span-2 w-full ml-5">
-
-                                    <h4 class="text-lg text-choco ">Rumah bergaya vintage yang membawa
-                                        kembali memori</h4>
-                                    <p class="mt-2 text-sm text-greyold">In publishing and graphic design, Lorem ipsum
-                                        is a
-                                        placeholder text commonly used to demonstrate the visual form of a document
-                                        or a typeface
-                                    </p>
-                                </div>
-                            </div> --}}
-                        </div>
-                    </div>
                 </div>
             </div>
 
         </div>
 
         <!-- End makeover-->
+        {{-- konstruksi --}}
+        <div class="relative px-8 py-10 bg-white border-t border-gray-200 md:py-16 lg:py-24     xl:py-40 xl:px-0">
 
-       <div class=" max-w-full sm:w-max-w-full rounded overflow-hidden shadow-lg">
-<div class="mapouter">
-      <div class="gmap_canvas"><iframe class="lg:w-full w-full sm:w-full lg:h-96" id="gmap_canvas" src="https://maps.google.com/maps?q=7%C2%B049'02.0%22S%20110%C2%B024'07.8%22E&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a>
+                <div id="product" class="container flex flex-col items-center h-full max-w-6xl mx-auto">
 
-            <style>
-                  .mapouter {
-                        position: relative;
-                        text-align: right;
-                       
-                  }
+                    <h1 class="max-w-2xl px-5 md:pb-10 lg:pb-10 text-choco text-3xl text-center font-black leading-tight sm:mt-0 sm:px-0 sm:text-3xl md:text-right">Produk Konstruksi</h1>
+                </div>
 
-            </style><a href="https://www.embedgooglemap.net"></a>
-            <style>
-                  .gmap_canvas {
-                        overflow: hidden;
-                        background: none !important;
-                        
-                  }
-
-            </style>
-      </div>
-</div>
+              <div class="swiper2 mx-0 grid  grid-cols-4 sm:grid-cols-4 md:grid-cols-4  xl:grid-cols-4 gap-6">
+<div class="swiper-wrapper">
 
 
-</div>
+                    @foreach($construction as $key => $value)
+
+
+                    <!--Card 1-->
+                    <div class="swiper-slide lg:w-full w-20 mt-10  overflow-hidden  h-full object-contain ">
+
+                          <div class="bg-white w-full block rounded-lg  border-2 p-0 md:mx-4 shadow-md lg:shadow-sm md:mx-4 hover:bg-stone-100">
+
+                                <a href="{{ count($value->construction_images) > 0 ? $value->construction_images[0]->image : null }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->description }}">
+
+
+                                      <img class="w-full block object-contain  md:h-28 lg:h-48" src="{{ count($value->construction_images) > 0 ? $value->construction_images[0]->image : null }}" alt="construction" />
+
+                                </a>
+                                @if(count($value->construction_images) > 0)
+
+                                @foreach($value->construction_images as $idx => $images)
+                                @if($idx != 0)
+
+                                <a href="{{ $images->image }}" data-lightbox="image{{ $value->id }}" data-title="{{ $value->description }}">
+
+                                </a>
+                                @endif
+
+
+                                @endforeach
+
+                                @endif
+
+                                <a href="{{ count($value->construction_images) > 0 ? $value->construction_images[0]->image : null }}" data-lightbox="image{{ $value->id }}" target="_blank" class="relative text-[8px] lg:text-sm py-1 my-2 mx-2 px-0 block text-center content-center text-grey font-semibold hover:text-brown transition duration-300 bg-brown100 text-white rounded-full">{{ $value->title }}
+
+                                </a>
+
+                          </div>
+
+                    </div>
+                    @endforeach
+ </div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+
+              </div>
+
+              <a href="{{ asset("constructionList") }}" target="_blank" class="relative mt-10  py-1 my-2 mx-2 px-0 block text-center  text-grey font-semibold hover:text-brown100 transition duration-300  text-brown rounded-full">Lihat Semua Produk Konstruksi
+
+              </a>
+        </div>
+
+        {{-- end konstruksi --}}
+
+        <div class=" max-w-full sm:w-max-w-full rounded overflow-hidden shadow-lg">
+            <div class="mapouter">
+                <div class="gmap_canvas"><iframe class="lg:w-full w-full sm:w-full lg:h-96" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=7%C2%B049'02.0%22S%20110%C2%B024'07.8%22E&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                        href="https://123movies-to.org"></a>
+
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+
+                        }
+
+                    </style><a href="https://www.embedgooglemap.net"></a>
+                    <style>
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+
+                        }
+
+                    </style>
+                </div>
+            </div>
+
+
+        </div>
+        {{-- end maps --}}
+
+        {{-- location --}}
+        <div class="location relative mt-10">
+            <div class="location1 ">
+            
+                <img class="w-full max-h-60 object-cover brightness-50" src="{{ asset('assets/img/background/bg001.jpeg') }}" alt="">
+
+
+                <div class="bottom-left absolute z-10 text-white top-20 shadow-sm left-16 lg:text-xl text-sm font-bold">SHOWROOM:</div>
+                <div class="bottom-left absolute z-10 text-white top-1/4 shadow-sm left-16 lg:text-lg text-xs font-bold w-1/2 lg:w-1/3">Jl. Gedongkuning No.8C, Pelem Mulong, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewah Yogyakarta 55198</div>
+
+            </div>
+            <div class="location2 grid grid-cols-2 max-h-60">
+
+                <img class=" w-full h-56 object-cover brightness-50 " src="{{ asset('assets/img/background/bg002.jpeg') }}" alt="">
+
+                <img class=" w-full h-56 object-cover brightness-50 " src="{{ asset('assets/img/background/bg003.jpeg') }}" alt="">
+                <div class="bottom-left absolute z-10 text-white bottom-36 shadow-sm right-20 lg:right-1/3 lg:text-xl text-sm font-bold">TEMPAT PRODUKSI:</div>
+                <div class="bottom-left absolute z-10 text-white bottom-14 lg:bottom-7 shadow-sm right-4 lg:right-48 lg:text-lg text-xs font-bold w-1/2 lg:w-1/3">Jl. Gedongkuning No.8C, Pelem Mulong, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewah Yogyakarta 55198</div>
+
+            </div>
+
+        </div>
+
+        <!-- BEGIN FEATURES SECTION -->
+        <div id="features" class="relative w-full px-8 pt-10  md:py-0 lg:py-24 xl:py-40 xl:px-0">
+
+              <div class="container flex flex-col items-center justify-between h-full max-w-6xl mx-auto">
+
+                    {{-- <h2 class="my-5 text-base font-medium tracking-tight text-indigo-500 uppercase">Our Features</h2> --}}
+                    <h1 class="max-w-2xl px-5 md:mt-4 mt-2 text-choco text-3xl text-center font-black leading-tight  sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
+
+
+                          Kenapa Memilih Kami?</h1>
+                    <div class="flex flex-col sm:rounded-lg p-5 pb-10 lg:rounded-lg w-full mt-5 lg:flex-row sm:mt-0 lg:mt-10">
+
+
+
+                          <div class="flex flex-col md:flex-row text-center md:-mx-4">
+                          
+                                <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100 ">
+
+
+                                      <img class="mx-auto mb-6 w-20 h-20" src="{{ asset("assets/img/accounting.png") }}" alt="">
+
+
+                                      <h4 class="text-xl text-brown font-bold">Profesional </h4>
+
+                                      <p class="mt-1 text-subtitle">Tenaga ahli di bidang makeover</p>
+
+                                </div>
+
+                                <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
+                                      <img class="mx-auto mb-6 w-20 h-20" src="{{ asset("assets/img/user-experience.png") }}" alt="">
+
+
+
+                                      <h4 class="text-xl text-brown font-bold">Berpengalaman</h4>
+
+                                      <p class="mt-1 text-subtitle">Telah mengerjakan ratusan proyek</p>
+
+
+                                </div>
+
+                                <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
+                                      <img class="mx-auto mb-6 w-20 h-20" src="{{ asset("assets/img/quality.png") }}" alt="">
+
+
+                                      <h4 class="text-xl text-brown font-bold">Kualitas </h4>
+
+                                      <p class="mt-1 text-subtitle">Menggunakan material terbaik</p>
+
+                                </div>
+
+                                <div class="bg-white mt-5 rounded-lg shadow-md lg:shadow-sm p-8 md:mx-4 hover:bg-stone-100">
+                                      <img class="mx-auto mb-6 w-20 h-20" src="{{ asset("assets/img/furniture.png") }}" alt="">
+
+
+
+                                      <h4 class="text-xl text-brown font-bold">Banyak Pilihan</h4>
+
+                                      <p class="mt-1 text-subtitle">Tersedia berbagai macam produk</p>
+
+
+                                </div>
+
+                          </div>
+
+
+
+
+                    </div>
+              </div>
+        </div>
+        <!-- END FEATURES SECTION -->
+
 
         <div id="socialMedia"
-            class="flex items-center mt-10 bg-backgroundHeader p-10 justify-center w-full 2xl:w-full 2xl:h-full  md:py-16 lg:py-24 sm:py-20 xl:px-0">
+            class="flex items-center mt-10 bg-stone-100 p-10 justify-center w-full 2xl:w-full 2xl:h-full md:py-16 lg:py-24 sm:py-20 xl:px-0">
+
 
 
             <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl  mx-auto text-center">
@@ -563,6 +688,7 @@
                                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Tentang
                                 Kami</a>
                         </li>
+                        
                         <li><a href="{{ asset("productsList") }}"
                                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Produk</a>
                         </li>
@@ -646,7 +772,99 @@
         </script>
         <script src="{{ asset('lightbox/js/lightbox-plus-jquery.js') }}"></script>
         <script src="{{ asset('lightbox/js/lightbox.js') }}"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
+        <script>
+            const swiper = new Swiper( '.swiper', {
+                // Optional parameters
+                loop: true,
+                effect: 'flip',
+                autoplay: {
+                    delay: 5000,
+                },
+                flipEffect: {
+                    slideShadows: true,
+                },
+
+
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    draggable: true,
+
+                },
+            } );
+
+        </script>
+        <script>
+              const swiper2 = new Swiper('.swiper2', {
+                    // Optional parameters
+                    loop: true,
+                    slidesPerView: 3,
+                    spaceBetween: 30
+
+                    , effect: 'slide'
+                    , autoplay: {
+                          delay: 5000
+                    , }
+                    , flipEffect: {
+                          slideShadows: true
+                    , },
+
+
+
+                    // If we need pagination
+                    pagination: {
+                          el: '.swiper-pagination'
+                    , },
+
+                    // Navigation arrows
+                    navigation: {
+                          prevEl: '.swiper-button-prev'
+                          , nextEl: '.swiper-button-next'
+                    , },
+
+                    // And if we need scrollbar
+                    scrollbar: {
+                          el: '.swiper-scrollbar'
+                          , draggable: true,
+
+                    }
+              , });
+
+        </script>
+
+        <script>
+        // set the dropdown menu element
+        const targetEl = document.getElementById('dropdownMenu');
+
+        // set the element that trigger the dropdown menu on click
+        const triggerEl = document.getElementById('dropdownButton');
+
+        // options with default values
+        const options = {
+        placement: 'bottom',
+        onHide: () => {
+        console.log('dropdown has been hidden');
+        },
+        onShow: () => {
+        console.log('dropdown has been shown');
+        }
+        };
+
+        </script>
     </body>
 
 </html>

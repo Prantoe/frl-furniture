@@ -5,24 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\ServiceImages;
-use Validator;
-use DB;
-
+// use Validator;
+use Illuminate\Support\Facades\Validator;
+// use DB;
+use Illuminate\Support\Facades\DB;
 class ServiceController extends Controller
 {
     public function index()
-  {
+      {
     $services = Service::with('service_images')->latest()->paginate(5);
- $userName = auth()->user()->name;
+    $userName = auth()->user()->name;
 
     return view('Services.index',compact('services','userName'))
     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-     public function create()
-     {
-     return view('Services.create');
-     }
+    public function create()
+    {
+    return view('Services.create');
+    }
 
      public function store(Request $request)
      {

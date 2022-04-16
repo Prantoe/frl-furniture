@@ -9,28 +9,28 @@ use Illuminate\Support\Facades\DB;
 use App\Models\ProductImages;
 use App\Models\Service;
 use App\Models\Category;
+use App\Models\Construction;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
+      /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-          $products = Product::with('product_images')->latest()->paginate(3);
-          $services = Service::with('service_images')->latest()->paginate(2);
-           $makeover = Service::with('service_images')->first();
-         $categories = Category::latest()->get();
-         $categoriesName = DB::table('categories')->get();
+      public function index(Request $request)
+      {
+      $products = Product::with('product_images')->oldest()->paginate(8);
+      $services = Service::with('service_images')->oldest()->paginate(2);
+      $makeover = Service::with('service_images')->first();
+      $construction = Construction::with('construction_images')->oldest()->paginate(8);
+      $categories = Category::latest()->get();
+      $categoriesName = DB::table('categories')->get();
 
-
-        
-          return view('Home.index',compact('products','services','makeover','categories','categoriesName'))
-          ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
+      return view('Home.index',compact('products','services','makeover','construction','categories','categoriesName'))
+          ->with('i', (request()->input('page', 1) - 1) * 10);
+      }
 
       public function productsList(Request $request)
       {
@@ -38,7 +38,7 @@ class HomeController extends Controller
       $categoryId = $request->id;
       if($categoryId){
             // @dd($categoryId);
-            $products = Product::where('category_id',$categoryId)->with('product_images')->latest()->paginate();
+            $products = Product::where('category_id',$categoryId)->with('product_images')->oldest()->paginate();
       }else{
             $products = Product::with('product_images')->latest()->paginate();
       }
@@ -58,11 +58,20 @@ class HomeController extends Controller
     ->with('i', (request()->input('page', 1) - 1) * 5);
       }
 
+      public function constructionList()
+      {
+      $constructions = Construction::with('construction_images')->latest()->paginate();
+
+      return view('Home.construction',compact('constructions'))
+      ->with('i', (request()->input('page', 1) - 1) * 5);
+      }
+
     public function about()
     {
 
     return view('Home.about');
     }
+    
 
    
 }

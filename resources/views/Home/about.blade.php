@@ -31,6 +31,41 @@
                      background: #a0aec0;
                }
 
+                  /* Add a red background color to navbar links on hover */
+                  .navbar a:hover, .dropdown:hover .dropbtn {
+
+                  }
+
+                  /* Dropdown content (hidden by default) */
+                  .dropdown-content {
+                  display: none;
+                  position: absolute;
+                  background-color: #f9f9f9;
+                  min-width: 160px;
+                  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                  z-index: 1;
+                  }
+
+                  /* Links inside the dropdown */
+                  .dropdown-content a {
+                  float: none;
+                  color: black;
+                  padding: 12px 16px;
+                  text-decoration: none;
+                  display: block;
+                  text-align: left;
+                  }
+
+                  /* Add a grey background color to dropdown links on hover */
+                  .dropdown-content a:hover {
+                  background-color: #ddd;
+                  }
+
+                  /* Show the dropdown menu on hover */
+                  .dropdown:hover .dropdown-content {
+                  display: block;
+                  }
+
          </style>
 
     </head>
@@ -51,9 +86,25 @@
 
                 <nav id="nav" class="absolute top-0 left-0 z-50 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
                       <a href="/" class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Beranda</a>
-                      <a href="{{ asset("about") }}" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang Kami</a>
-                      <a href="{{ asset("productsList") }}" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Produk</a>
+                      <a href="{{ asset("about") }}" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang
+                            Kami</a>
+                      <a href="{{ asset("productsList") }}" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown"></a>
+
+                      <div class="dropdown ">
+                            <button class="dropbtn mr-0 font-bold duration-100 md:mr-3 lg:mr-8 lg:-ml-8 transition-color hover:text-brown">Produk
+
+                            </button>
+
+                            <div class="dropdown-content">
+                                  <a href="{{ asset("productsList") }}">Produk Interior</a>
+
+                                  <a href="{{ asset("constructionList") }}">Produk Konstruksi</a>
+
+                            </div>
+                      </div>
+
                       <a href="{{ asset("makeOverList") }}" class="font-bold duration-100 transition-color hover:text-brown">Makeover</a>
+
 
                       <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
                             {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
@@ -62,6 +113,7 @@
                             </a>
                       </div>
                 </nav>
+
 
                 {{-- heading --}}
                 <div class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between">

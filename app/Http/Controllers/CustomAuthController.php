@@ -35,11 +35,13 @@ class CustomAuthController extends Controller
         $dataProducts = DB::table('products')->count();
         $dataServices = DB::table('services')->count();
         $dataCategories = DB::table('categories')->count();
+        $dataConstruct = DB::table('constructions')->count();
         $users = DB::table('users')->count();
          $userName = auth()->user()->name;
 
         if(Auth::check()){
-            return view('Dashboard.index',compact('dataProducts','dataServices','dataCategories','users','userName'));
+            return
+            view('Dashboard.index',compact('dataProducts','dataServices','dataCategories','users','userName','dataConstruct'));
         }
   
         return redirect("login")->withSuccess('You are not allowed to access');

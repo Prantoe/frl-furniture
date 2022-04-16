@@ -32,6 +32,43 @@
                 background: #a0aec0;
             }
 
+             /* Add a red background color to navbar links on hover */
+             .navbar a:hover, .dropdown:hover .dropbtn {
+
+             }
+
+             /* Dropdown content (hidden by default) */
+             .dropdown-content {
+             display: none;
+             position: absolute;
+             background-color: #f9f9f9;
+             min-width: 160px;
+             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+             z-index: 1;
+             }
+
+             /* Links inside the dropdown */
+             .dropdown-content a {
+             float: none;
+             color: black;
+             padding: 12px 16px;
+             text-decoration: none;
+             display: block;
+             text-align: left;
+             }
+
+             /* Add a grey background color to dropdown links on hover */
+             .dropdown-content a:hover {
+             background-color: #ddd;
+             }
+
+             /* Show the dropdown menu on hover */
+             .dropdown:hover .dropdown-content {
+             display: block;
+             }
+
+
+
         </style>
 
     </head>
@@ -50,26 +87,36 @@
                         <span class="ml-3 text-xl md:hidden text-gray-800">FRL Furniture</span></span>
                     </a>
 
-                    <nav id="nav"
-                        class="absolute top-0 left-0 z-50 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
-                        <a href="/"
-                            class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Beranda</a>
-                        <a href="{{ asset("about") }}"
-                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang
-                            Kami</a>
-                        <a href="{{ asset("productsList") }}"
-                            class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Produk</a>
-                        <a href="{{ asset("makeOverList") }}"
-                            class="font-bold duration-100 transition-color hover:text-brown">Makeover</a>
+                    <nav id="nav" class="absolute top-0 left-0 z-50 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
+                          <a href="/" class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-brown">Beranda</a>
+                          <a href="{{ asset("about") }}" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown">Tentang
+                                Kami</a>
+                          <a href="{{ asset("productsList") }}" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-brown"></a>
 
-                        <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
-                            {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
-                            <a href="https://linktr.ee/frl_furniture" target="_blank"
-                                class="relative inline-block w-full px-5 py-3 text-sm leading-none text-center text-white bg-green-500 fold-bold">Hubungi
-                                Kami
-                            </a>
-                        </div>
+                          <div class="dropdown ">
+                                <button class="dropbtn mr-0 font-bold duration-100 md:mr-3 lg:mr-8 lg:-ml-8 transition-color hover:text-brown">Produk
+
+                                </button>
+
+                                <div class="dropdown-content">
+                                      <a href="{{ asset("productsList") }}">Produk Interior</a>
+
+                                      <a href="{{ asset("constructionList") }}">Produk Konstruksi</a>
+
+                                </div>
+                          </div>
+
+                          <a href="{{ asset("makeOverList") }}" class="font-bold duration-100 transition-color hover:text-brown">Makeover</a>
+
+
+                          <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
+                                {{-- <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a> --}}
+                                <a href="https://linktr.ee/frl_furniture" target="_blank" class="relative inline-block w-full px-5 py-3 text-sm leading-none text-center text-white bg-green-500 fold-bold">Hubungi
+                                      Kami
+                                </a>
+                          </div>
                     </nav>
+
 
                     {{-- heading --}}
                     <div
@@ -98,7 +145,7 @@
             <h1
                 class="max-w-2xl px-5 md:pb-10 lg:pb-0 text-choco text-3xl text-center font-black leading-tight sm:mt-0 sm:px-0 sm:text-3xl md:text-right">
 
-                Produk Kami</h1>
+                Produk Interior Kami</h1>
         </div>
         <nav
             class=" flex flex-row flex-row w-auto justify-center text-greyold-100  border-t border-gray-200 md:w-auto md:flex-row  text-base bg-transparent mt-5 border-none py-0 flex relative">
@@ -123,10 +170,11 @@
         </nav>
 
 
-        <div class="container mx-auto  space-y-2 mt-10 lg:space-x-0 lg:space-y-2 lg:gap-4 lg:grid lg:grid-cols-4">
+        <div class="container p-5 gap-4 grid grid-cols-2 mx-auto  space-y-2 mt-10 lg:space-x-0 lg:space-y-2 lg:gap-4 lg:grid lg:grid-cols-4">
 
             @foreach($products as $key => $value)
-                <div class="max-w-xs cursor-pointer ml-8 mb-5 bg-white  rounded-lg hover:shadow-2xl">
+                <div class="max-w-xs cursor-pointer mb-5 bg-white border-2 rounded-lg hover:shadow-2xl">
+
                     <a href="{{ count($value->product_images) > 0 ? $value->product_images[0]->image : null }}"
                         data-lightbox="image{{ $value->id }}" data-title="{{ $value->name }}">
 
